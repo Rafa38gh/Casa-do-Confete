@@ -4,7 +4,7 @@
 ### Passo a passo
 Clone Repositório
 ```sh
-git clone https://github.com/Rafa38gh/Casa-do-Confete.git
+git clone -b develop https://github.com/Rafa38gh/Casa-do-Confete.git
 ```
 ```sh
 cd Casa-do-Confete
