@@ -12,8 +12,13 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/cardapio', function () 
+{
+    return view('site/cardapio');
+});
 
 Route::get('/', function () 
 {
     return view('welcome');
 });
+
