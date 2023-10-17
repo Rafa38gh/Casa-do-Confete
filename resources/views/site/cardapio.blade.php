@@ -10,8 +10,8 @@
     <!-- Cabeçalho -->
     <header>
         <ul>
-            <li>Home</li>
-            <li>Sobre</li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/sobre">Sobre</a></li>
             <li>Cardápio</li>
             <li>Login</li>
             <li>Cadastro</li>
@@ -32,6 +32,7 @@
         </div>
     </main>
 
+    <!-- Rodapé -->
     <footer>
         <div class="footerLeft">
             <p>Casa do Confete</p>

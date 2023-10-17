@@ -12,8 +12,8 @@
     <header>
         <ul>
             <li>Home</li>
-            <li>Sobre</li>
-            <li>Cardápio</li>
+            <li><a href="/sobre">Sobre</a></li>
+            <li><a href="/cardapio">Cardápio</a></li>
             <li>Login</li>
             <li>Cadastro</li>
         </ul>
@@ -70,7 +70,7 @@
                     o que realmente se encaixa com a sua festa. Basta selecionar seus pratos favoritos e nossa equipe de chefs 
                     renomados cuidará do resto.
                 </p>
-                <p>Confira nossos cardápios</p>     <!-- Link para a página 'Cardápios' -->
+                <p><a href="/cardapio">Confira nossos cardápios</a></p>
             </figcaption>
         </figure>
     </main>
@@ -105,6 +105,7 @@
         </p>
     </div>
 
+    <!-- Rodapé -->
     <footer>
         <div class="footerLeft">
             <p>Casa do Confete</p>
