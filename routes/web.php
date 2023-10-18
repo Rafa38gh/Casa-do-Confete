@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () 
 {
     return view('welcome');
-});
+})->name('web.index');
 
 Route::get('/sobre', function () 
 {
@@ -39,6 +40,15 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+/* Área logada (Admin) */
+Route::middleware(['auth', 'admin'])->group(function ()     /* Roda os middlewares de autenticação e de admin */
+{
+    Route::get('/admin', function ()
+    {
+        return view('admin');
+    });
 });
 
 require __DIR__.'/auth.php';
