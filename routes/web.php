@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\StatusController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -45,10 +46,19 @@ Route::middleware('auth')->group(function () {
 /* Área logada (Admin) */
 Route::middleware(['auth', 'admin'])->group(function ()     /* Roda os middlewares de autenticação e de admin */
 {
-    Route::get('/admin', function ()
-    {
-        return view('admin');
-    });
+    Route::get('/admin', [StatusController::class, 'admin'])->name('status.admin');
+});
+
+/* Área logada (Comercial) */
+Route::middleware(['auth', 'comm'])->group(function ()     /* Roda os middlewares de autenticação e de comercial */
+{
+    Route::get('/commercial', [StatusController::class, 'comm'])->name('status.commercial');
+});
+
+/* Área logada (Operacional) */
+Route::middleware(['auth', 'ops'])->group(function ()     /* Roda os middlewares de autenticação e de ops */
+{
+    Route::get('/ops', [StatusController::class, 'ops'])->name('status.ops');
 });
 
 require __DIR__.'/auth.php';

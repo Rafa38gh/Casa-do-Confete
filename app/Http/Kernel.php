@@ -44,7 +44,9 @@ class Kernel extends HttpKernel
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
 
-        'admin' => [\App\Http\Middleware\AdminMiddleware::class],       // Adiciona o middleware 'AdminMiddleware' no Kernel, como um grupo.
+        'admin' => [\App\Http\Middleware\AdminMiddleware::class],       // Adiciona os Middlewares de autenticação para contas especiais
+        'comm' => [\App\Http\Middleware\CommercialMiddleware::class],
+        'ops' => [\App\Http\Middleware\OpsMiddleware::class],
     ];
 
     /**
