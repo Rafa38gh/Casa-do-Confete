@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Logins;
 
 use App\Http\Controllers\Controller;
+use App\Models\Party;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -34,9 +35,12 @@ class AdminController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show()
+    public function show(Party $party)
     {
-        return view('admin/parties');
+        $parties = $party->all();
+        dd($parties);
+
+        return view('admin/parties', compact('parties'));   /* Comando 'compact()' passa a variável $parties para a view */
     }
 
     /**

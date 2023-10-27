@@ -10,6 +10,6 @@
 <body>
     <h1>Área do Admin</h1>
 
-    <a href="/admin/create">Visualizar Festas</a>
+    <a href="/admin/parties">Visualizar Festas</a>
 </body>
 </html>

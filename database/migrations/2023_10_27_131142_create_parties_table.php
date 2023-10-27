@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('parties', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->date('date');
+            $table->dateTime('date', 0);
             $table->enum('status', ['a', 'w', 'd']);    /* Controla os status dos pedidos ('Approved', 'Waiting', 'Denied') */
             $table->timestamps();
         });

@@ -52,7 +52,7 @@ Route::middleware(['auth'])->group(function ()     /* Roda o middleware de auten
     Route::middleware(['admin'])->group(function ()
     {
         Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
-        Route::get('/admin/create', [AdminController::class, 'show'])->name('admin.show');
+        Route::get('/admin/parties', [AdminController::class, 'show'])->name('admin.show');
     });
 
     /* Comercial */
