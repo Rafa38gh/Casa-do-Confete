@@ -1,1 +1,0 @@
-<h1>Área do Admin!</h1>

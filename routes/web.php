@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\StatusController;
+use App\Http\Controllers\Logins\AdminController;
+use App\Http\Controllers\Logins\CommController;
+use App\Http\Controllers\Logins\OpsController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -43,22 +45,28 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-/* Área logada (Admin) */
-Route::middleware(['auth', 'admin'])->group(function ()     /* Roda os middlewares de autenticação e de admin */
+/* Área logada */
+Route::middleware(['auth'])->group(function ()     /* Roda o middleware de autenticação para todas as áreas logadas */
 {
-    Route::get('/admin', [StatusController::class, 'admin'])->name('status.admin');
-});
+    /* Admin */
+    Route::middleware(['admin'])->group(function ()
+    {
+        Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
+        Route::get('/admin/create', [AdminController::class, 'show'])->name('admin.show');
+    });
 
-/* Área logada (Comercial) */
-Route::middleware(['auth', 'comm'])->group(function ()     /* Roda os middlewares de autenticação e de comercial */
-{
-    Route::get('/commercial', [StatusController::class, 'comm'])->name('status.commercial');
-});
+    /* Comercial */
+    Route::middleware(['comm'])->group(function ()
+    {
+        Route::get('/commercial', [CommController::class, 'index'])->name('comm.index');
+    });
 
-/* Área logada (Operacional) */
-Route::middleware(['auth', 'ops'])->group(function ()     /* Roda os middlewares de autenticação e de ops */
-{
-    Route::get('/ops', [StatusController::class, 'ops'])->name('status.ops');
+    /* Operacional */
+    Route::middleware(['ops'])->group(function ()
+    {
+        Route::get('/ops', [OpsController::class, 'index'])->name('ops.index');
+    });
+    
 });
 
 require __DIR__.'/auth.php';
