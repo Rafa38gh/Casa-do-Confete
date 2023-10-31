@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->dateTime('date', 0);
+            $table->integer('age');
             $table->enum('status', ['a', 'w', 'd']);    /* Controla os status dos pedidos ('Approved', 'Waiting', 'Denied') */
             $table->timestamps();
         });

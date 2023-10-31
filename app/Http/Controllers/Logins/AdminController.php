@@ -38,7 +38,7 @@ class AdminController extends Controller
     public function show(Party $party)
     {
         $parties = $party->all();
-        dd($parties);
+        /* dd($parties); */
 
         return view('admin/parties', compact('parties'));   /* Comando 'compact()' passa a variável $parties para a view */
     }
