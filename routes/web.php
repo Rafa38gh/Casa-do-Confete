@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Logins\AdminController;
 use App\Http\Controllers\Logins\CommController;
 use App\Http\Controllers\Logins\OpsController;
+use App\Http\Controllers\Pages\{PartyController};
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -52,13 +53,14 @@ Route::middleware(['auth'])->group(function ()     /* Roda o middleware de auten
     Route::middleware(['admin'])->group(function ()
     {
         Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
-        Route::get('/admin/parties', [AdminController::class, 'show'])->name('admin.show');
+        Route::get('/admin/parties', [PartyController::class, 'index'])->name('admin.parties');
     });
 
     /* Comercial */
     Route::middleware(['comm'])->group(function ()
     {
         Route::get('/commercial', [CommController::class, 'index'])->name('comm.index');
+        Route::get('/commercial/parties', [PartyController::class, 'index'])->name('comm.parties');
     });
 
     /* Operacional */
@@ -66,6 +68,10 @@ Route::middleware(['auth'])->group(function ()     /* Roda o middleware de auten
     {
         Route::get('/ops', [OpsController::class, 'index'])->name('ops.index');
     });
+
+    /* Aniversariante */
+    Route::get('/parties/create', [PartyController::class, 'create'])->name('parties.create');
+    Route::post('/parties/create', [PartyController::class, 'store'])->name('parties.store');
     
 });
 

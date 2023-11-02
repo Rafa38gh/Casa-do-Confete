@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Party extends Model
 {
     use HasFactory;
+
+    /* Especifica quais colunas podem ser preenchidas durante o cadastro */
+    protected $fillable = [
+        'name',
+        'age',
+        'invites',
+        'food',
+        'date'
+    ];
 }

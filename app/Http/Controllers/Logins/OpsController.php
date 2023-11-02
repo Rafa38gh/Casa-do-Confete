@@ -9,6 +9,6 @@ class OpsController extends Controller
 {
     public function index()
     {
-        return view('ops/index');
+        return view('login/ops');
     }
 }
