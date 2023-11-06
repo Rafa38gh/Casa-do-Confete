@@ -5,6 +5,7 @@ use App\Http\Controllers\Logins\AdminController;
 use App\Http\Controllers\Logins\CommController;
 use App\Http\Controllers\Logins\OpsController;
 use App\Http\Controllers\Pages\{PartyController};
+use App\Http\Controllers\Pages\{FoodController};
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -46,8 +47,14 @@ Route::middleware(['auth'])->group(function ()     /* Roda o middleware de auten
     /* Admin */
     Route::middleware(['admin'])->group(function ()
     {
+        /* Gerenciamento das festas */
         Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
         Route::get('/admin/parties', [PartyController::class, 'index'])->name('admin.parties');
+
+        /* Gerenciamento do cardápio */
+        Route::get('/admin/foods', [FoodController::class, 'index'])->name('admin.foods');
+        Route::get('/admin/foods/create', [FoodController::class, 'create'])->name('foods.create');
+        Route::post('/admin/foods/create', [FoodController::class, 'store'])->name('foods.store');
     });
 
     /* Comercial */
