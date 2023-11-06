@@ -22,6 +22,6 @@ class CommercialMiddleware
             return $next($request);
         }
 
-        return redirect()->route('web.index')->with('error', 'Você não possui acesso de conta comercial');
+        abort(403);
     }
 }

@@ -22,6 +22,6 @@ class OpsMiddleware
             return $next($request);
         }
 
-        return redirect()->route('web.index')->with('error', 'Você não possui acesso de conta operacional');
+        abort(403);
     }
 }

@@ -22,6 +22,6 @@ class AdminMiddleware
             return $next($request);
         }
         
-        return redirect()->route('web.index')->with('error', 'Você não possui acesso de administrador');
+        abort(403);
     }
 }
