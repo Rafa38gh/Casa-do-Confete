@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Pages;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StorePartyRequest;
 use App\Models\Party;
 use Illuminate\Http\Request;
 
@@ -21,11 +22,23 @@ class PartyController extends Controller
         return view('cruds/parties/create');
     }
 
-    public function store(Request $request, Party $party)     /* Request pega todos os dados da requisição */
+    public function store(StorePartyRequest $request, Party $party)     /* Request pega todos os dados da requisição */
     {
         $data = $request->only(['name', 'age', 'invites', 'food', 'date']);
 
         $party = $party->create($data);
+
+        return redirect()->route('dashboard');
+    }
+
+    public function destroy(string|int $id)     /* Recebe o id da festa epecífica a ser deletada */
+    {
+        if(!$party = Party::find($id))
+        {
+            return back();
+        }
+
+        $party->delete();
 
         return redirect()->route('dashboard');
     }

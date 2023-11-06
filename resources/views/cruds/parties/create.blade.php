@@ -1,10 +1,19 @@
 <h1>Agendamento de Festa</h1>
 
+<!-- Verificação de erros -->
+@if ($errors->any())
+    @foreach ($errors->all() as $error)
+        <ul>
+            <li>{{ $error }}</li>
+        </ul>
+    @endforeach
+@endif
+
 <form action="{{ route('parties.store') }}" method="POST">
     @csrf
-    <input type="text" placeholder="Nome do Aniversariante" name="name" size="30" required>
-    <input type="number" placeholder="Idade a ser comemorada" name="age" required>
-    <input type="number" placeholder="Quantidade de convidados" name="invites" required>
+    <input type="text" placeholder="Nome do Aniversariante" name="name" size="30" value="{{ old('name') }}">
+    <input type="number" placeholder="Idade a ser comemorada" name="age"  value="{{ old('age') }}">
+    <input type="number" placeholder="Quantidade de convidados" name="invites" value="{{ old('invites') }}">
 
     <div>
         <input type="radio" id="option1" name="food" value="food1" checked>
@@ -19,7 +28,7 @@
     </div>
 
     <div>
-        <input type="datetime-local" name="date" required>
+        <input type="datetime-local" name="date" value="{{ old('date') }}">
     </div>
 
     <button type="submit">Agendar Festa</button>

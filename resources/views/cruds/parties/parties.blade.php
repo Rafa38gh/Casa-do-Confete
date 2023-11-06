@@ -18,6 +18,13 @@
                 <td>{{ $party->food }}</td>
                 <td>{{ $party->date }}</td>
                 <td>{{ $party->status }}</td>
+                <td>
+                    <form action="{{ route('parties.destroy', $party->id) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit">Deletar</button>
+                    </form>
+                </td>
             </tr>
         @endforeach 
     </tbody>

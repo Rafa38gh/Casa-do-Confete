@@ -34,12 +34,6 @@ Route::get('/cardapio', function ()
     return view('/site/cardapio');
 });
 
-
-/* Autenticação */
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
-
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -70,8 +64,16 @@ Route::middleware(['auth'])->group(function ()     /* Roda o middleware de auten
     });
 
     /* Aniversariante */
-    Route::get('/parties/create', [PartyController::class, 'create'])->name('parties.create');
-    Route::post('/parties/create', [PartyController::class, 'store'])->name('parties.store');
+
+    /* Autenticação */
+    Route::get('/dashboard', function () 
+    {
+        return view('dashboard');
+    })->name('dashboard');
+
+    Route::get('/dashboard/parties/create', [PartyController::class, 'create'])->name('parties.create');
+    Route::post('/dashboard/parties/create', [PartyController::class, 'store'])->name('parties.store');
+    Route::delete('/dashboard/parties/{id}', [PartyController::class, 'destroy'])->name('parties.destroy');
     
 });
 
