@@ -53,16 +53,19 @@ Route::middleware(['auth'])->group(function ()     /* Roda o middleware de auten
         Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
         Route::get('/admin/parties', [PartyController::class, 'index'])->name('admin.parties');
 
+
         /* Gerenciamento do cardápio */
         Route::get('/admin/foods', [FoodController::class, 'index'])->name('admin.foods');
         Route::get('/admin/foods/create', [FoodController::class, 'create'])->name('foods.create');
         Route::post('/admin/foods/create', [FoodController::class, 'store'])->name('foods.store');
+        Route::delete('/admin/foods/{id}', [FoodController::class, 'destroy'])->name('foods.destroy');
 
         /* Gerenciamento das recomendações */
         Route::get('/admin/recommendations', [RecommendationController::class, 'index'])->name('admin.recommendations');
         Route::get('/admin/recommendations/create', [RecommendationController::class, 'create'])->name('recommendations.create');
         Route::post('/admin/recommendations/create', [RecommendationController::class, 'store'])->name('recommendations.store');
         Route::delete('/admin/recommendations/{id}', [RecommendationController::class, 'destroy'])->name('recommendations.destroy');
+
     });
 
     /* Comercial */

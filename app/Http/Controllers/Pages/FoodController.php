@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Pages;
 use App\Http\Controllers\Controller;
 use App\Models\Food;
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreFoodRequest;
 
 class FoodController extends Controller
 {
@@ -20,12 +21,24 @@ class FoodController extends Controller
         return view('/cruds/foods/create');
     }
 
-    public function store(Request $request, Food $food)
+    public function store(StoreFoodRequest $request, Food $food)
     {
         $data = $request->only(['name', 'body']);
 
         $food = $food->create($data);
 
         return redirect()->route('admin.index');
+    }
+
+    public function destroy(string|int $id)
+    {
+        if(!$food = Food::find($id))
+        {
+            return back();
+        }
+
+        $food->delete();
+
+        return redirect()->route('admin.foods');
     }
 }

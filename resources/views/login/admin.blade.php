@@ -13,5 +13,7 @@
     <a href="{{ route('admin.parties') }}">Visualizar Festas</a>
     <br>
     <a href="{{ route('admin.recommendations') }}">Visualizar Recomendações</a>
+    <br>
+    <a href="{{ route('admin.foods') }}">Visualizar Cardápio</a>
 </body>
 </html>
