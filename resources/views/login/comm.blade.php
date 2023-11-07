@@ -10,6 +10,11 @@
 <body>
     <h1>Área Comercial</h1>
 
-    <a href="{{ route('comm.parties') }}">Visualizar Festas</a>
+    <ul>
+        <li> <a href="{{ route('comm.parties') }}">Visualizar Festas</a> </li>
+        <li> <a href="{{ route('comm.foods') }}">Visualizar Cardápios</a> </li>
+        <li> <a href="{{ route('comm.recommendations') }}">Recomendações do Buffet</a> </li>
+    </ul>
+
 </body>
 </html>

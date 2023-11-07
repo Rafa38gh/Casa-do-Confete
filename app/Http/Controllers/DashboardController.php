@@ -11,7 +11,6 @@ class DashboardController extends Controller
     {
         $recommendations = $recommendation->all();
 
-
         return view('dashboard', compact('recommendations'));
     }
 }
