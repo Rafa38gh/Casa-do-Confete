@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Pages;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StorePartyRequest;
 use App\Models\Party;
+use App\Models\Food;
 use Illuminate\Http\Request;
 
 class PartyController extends Controller
@@ -17,9 +18,11 @@ class PartyController extends Controller
         return view('cruds/parties/parties', compact('parties'));   /* Comando 'compact()' passa a variável $parties para a view */
     }
 
-    public function create()
+    public function create(Food $food)
     {
-        return view('cruds/parties/create');
+        $foods = $food->all();
+
+        return view('cruds/parties/create', compact('foods'));
     }
 
     public function store(StorePartyRequest $request, Party $party)     /* Request pega todos os dados da requisição */
@@ -40,6 +43,6 @@ class PartyController extends Controller
 
         $party->delete();
 
-        return redirect()->route('dashboard');
+        return redirect()->route('admin.index');
     }
 }

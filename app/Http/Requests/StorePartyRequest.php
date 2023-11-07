@@ -23,8 +23,8 @@ class StorePartyRequest extends FormRequest
     {
         return [
             'name' => 'required|min:3|max:50',
-            'age' => 'required',
-            'invites' => 'required',
+            'age' => 'required|min:1',
+            'invites' => 'required|min:1',
             'food' => 'required',
             'date' => 'required|unique:parties'
         ];
