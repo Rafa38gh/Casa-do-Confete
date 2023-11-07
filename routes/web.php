@@ -64,7 +64,9 @@ Route::middleware(['auth'])->group(function ()     /* Roda o middleware de auten
         Route::get('/admin/recommendations', [RecommendationController::class, 'index'])->name('admin.recommendations');
         Route::get('/admin/recommendations/create', [RecommendationController::class, 'create'])->name('recommendations.create');
         Route::post('/admin/recommendations/create', [RecommendationController::class, 'store'])->name('recommendations.store');
-        Route::delete('/admin/recommendations/{id}', [RecommendationController::class, 'destroy'])->name('recommendations.destroy');
+        Route::get('/admin/recommendations/{recommendation}/edit', [RecommendationController::class, 'edit'])->name('recommendations.edit');
+        Route::put('/admin/recommendations/{recommendation}', [RecommendationController::class, 'update'])->name('recommendations.update');
+        Route::delete('/admin/recommendations/{recommendation}', [RecommendationController::class, 'destroy'])->name('recommendations.destroy');
 
     });
 
