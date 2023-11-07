@@ -11,5 +11,7 @@
     <h1>Área do Admin</h1>
 
     <a href="{{ route('admin.parties') }}">Visualizar Festas</a>
+    <br>
+    <a href="{{ route('admin.recommendations') }}">Visualizar Recomendações</a>
 </body>
 </html>

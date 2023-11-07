@@ -13,5 +13,19 @@
     <ul>
         <li><a href="{{ route('parties.create') }}">Agende uma festa</a></li>
     </ul>
+
+    <table>
+    <thead>
+        <th>Recomendações</th>
+    </thead>
+    <tbody>
+        @foreach($recommendations as $recommendation)            <!-- Display das recomendacoes -->
+            <tr>
+                <td>{{ $recommendation->body }}</td>
+            </tr>
+        @endforeach 
+    </tbody>
+</table>
+
 </body>
 </html>

@@ -6,6 +6,8 @@ use App\Http\Controllers\Logins\CommController;
 use App\Http\Controllers\Logins\OpsController;
 use App\Http\Controllers\Pages\{PartyController};
 use App\Http\Controllers\Pages\{FoodController};
+use App\Http\Controllers\Pages\{RecommendationController};
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -55,6 +57,12 @@ Route::middleware(['auth'])->group(function ()     /* Roda o middleware de auten
         Route::get('/admin/foods', [FoodController::class, 'index'])->name('admin.foods');
         Route::get('/admin/foods/create', [FoodController::class, 'create'])->name('foods.create');
         Route::post('/admin/foods/create', [FoodController::class, 'store'])->name('foods.store');
+
+        /* Gerenciamento das recomendações */
+        Route::get('/admin/recommendations', [RecommendationController::class, 'index'])->name('admin.recommendations');
+        Route::get('/admin/recommendations/create', [RecommendationController::class, 'create'])->name('recommendations.create');
+        Route::post('/admin/recommendations/create', [RecommendationController::class, 'store'])->name('recommendations.store');
+        Route::delete('/admin/recommendations/{id}', [RecommendationController::class, 'destroy'])->name('recommendations.destroy');
     });
 
     /* Comercial */
@@ -73,10 +81,8 @@ Route::middleware(['auth'])->group(function ()     /* Roda o middleware de auten
     /* Aniversariante */
 
     /* Autenticação */
-    Route::get('/dashboard', function () 
-    {
-        return view('dashboard');
-    })->name('dashboard');
+   Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
 
     Route::get('/dashboard/parties/create', [PartyController::class, 'create'])->name('parties.create');
     Route::post('/dashboard/parties/create', [PartyController::class, 'store'])->name('parties.store');
