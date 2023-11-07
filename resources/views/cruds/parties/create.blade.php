@@ -16,15 +16,10 @@
     <input type="number" placeholder="Quantidade de convidados" name="invites" value="{{ old('invites') }}">
 
     <div>
-        <input type="radio" id="option1" name="food" value="food1" checked>
-        <label for="option1">Cardápio 1</label>
-
-        <input type="radio" id="option2" name="food" value="food2">
-        <label for="option2">Cardápio 2</label>
-
-        <input type="radio" id="option3" name="food" value="food3">
-        <label for="option3">Cardápio 3</label>
-
+        @foreach($foods as $food)
+        <input type="radio" id="option{{ $loop->iteration }}" name="food" value="{{ $food->name }}">
+        <label for="option{{ $loop->iteration }}">{{ $food->name }}</label>
+        @endforeach
     </div>
 
     <div>
