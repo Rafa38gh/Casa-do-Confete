@@ -11,5 +11,6 @@
     <h1>Área do Admin</h1>
 
     <a href="{{ route('admin.parties') }}">Visualizar Festas</a>
+    <a href="{{ route('admin.foods') }}">Visualizar Cardápio</a>
 </body>
 </html>

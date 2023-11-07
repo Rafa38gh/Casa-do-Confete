@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Pages;
 use App\Http\Controllers\Controller;
 use App\Models\Food;
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreFoodRequest;
 
 class FoodController extends Controller
 {
@@ -20,7 +21,7 @@ class FoodController extends Controller
         return view('/cruds/foods/create');
     }
 
-    public function store(Request $request, Food $food)
+    public function store(StoreFoodRequest $request, Food $food)
     {
         $data = $request->only(['name', 'body']);
 
