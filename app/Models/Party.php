@@ -11,6 +11,7 @@ class Party extends Model
 
     /* Especifica quais colunas podem ser preenchidas durante o cadastro */
     protected $fillable = [
+        'user_id',
         'name',
         'age',
         'invites',
