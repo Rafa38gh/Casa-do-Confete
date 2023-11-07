@@ -51,10 +51,12 @@ Route::middleware(['auth'])->group(function ()     /* Roda o middleware de auten
         Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
         Route::get('/admin/parties', [PartyController::class, 'index'])->name('admin.parties');
 
+
         /* Gerenciamento do cardápio */
         Route::get('/admin/foods', [FoodController::class, 'index'])->name('admin.foods');
         Route::get('/admin/foods/create', [FoodController::class, 'create'])->name('foods.create');
         Route::post('/admin/foods/create', [FoodController::class, 'store'])->name('foods.store');
+        Route::delete('/admin/foods/{id}', [FoodController::class, 'destroy'])->name('foods.destroy');
     });
 
     /* Comercial */

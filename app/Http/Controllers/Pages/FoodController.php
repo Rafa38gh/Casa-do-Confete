@@ -29,4 +29,16 @@ class FoodController extends Controller
 
         return redirect()->route('admin.index');
     }
+
+    public function destroy(string|int $id)
+    {
+        if(!$food = Food::find($id))
+        {
+            return back();
+        }
+
+        $food->delete();
+
+        return redirect()->route('admin.foods');
+    }
 }
