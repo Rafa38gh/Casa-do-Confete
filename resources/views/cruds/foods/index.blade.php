@@ -1,5 +1,7 @@
 <h1>Cardápios</h1>
 
+<a href="{{ route('foods.create') }}">Novo cardápio</a>
+
 <table>
     <thead>
         <th>Nome do Cardápio</th>
