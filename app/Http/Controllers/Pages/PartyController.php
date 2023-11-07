@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StorePartyRequest;
 use App\Models\Party;
 use App\Models\Food;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class PartyController extends Controller
@@ -27,7 +28,10 @@ class PartyController extends Controller
 
     public function store(StorePartyRequest $request, Party $party)     /* Request pega todos os dados da requisição */
     {
+        $userId = Auth::id();
+
         $data = $request->only(['name', 'age', 'invites', 'food', 'date']);
+        $data['user_id'] = $userId;
 
         $party = $party->create($data);
 

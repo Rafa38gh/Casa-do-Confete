@@ -23,7 +23,9 @@ class StoreFoodRequest extends FormRequest
     {
         return [
             'name' => 'required|min:3|max:50',
-            'body' => 'required'
+            'body' => 'required',
+            'drink' => 'required',
+            'price' => 'required|min:1'
         ];
     }
 }

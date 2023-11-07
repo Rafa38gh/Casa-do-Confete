@@ -23,7 +23,7 @@ class FoodController extends Controller
 
     public function store(StoreFoodRequest $request, Food $food)
     {
-        $data = $request->only(['name', 'body']);
+        $data = $request->only(['name', 'body', 'drink', 'price']);
 
         $food = $food->create($data);
 

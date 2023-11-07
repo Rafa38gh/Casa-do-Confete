@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('parties', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained(table: 'users', indexName: 'party_user_id');  /*  */
             $table->string('name');
             $table->integer('age');
             $table->integer('invites');

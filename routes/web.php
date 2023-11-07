@@ -8,6 +8,7 @@ use App\Http\Controllers\Pages\{PartyController};
 use App\Http\Controllers\Pages\{FoodController};
 use App\Http\Controllers\Pages\{RecommendationController};
 use App\Http\Controllers\DashboardController;
+use App\Models\Recommendation;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -73,8 +74,15 @@ Route::middleware(['auth'])->group(function ()     /* Roda o middleware de auten
     /* Comercial */
     Route::middleware(['comm'])->group(function ()
     {
+        /* Gerenciamento das festas */
         Route::get('/commercial', [CommController::class, 'index'])->name('comm.index');
         Route::get('/commercial/parties', [PartyController::class, 'index'])->name('comm.parties');
+
+        /* Gerenciamento do cardápio */
+        Route::get('/commercial/foods', [FoodController::class, 'index'])->name('comm.foods');    
+        
+        /* Gerenciamento das recomendações */
+        Route::get('/commercial/recommendations', [RecommendationController::class, 'index'])->name('comm.recommendations');
     });
 
     /* Operacional */
@@ -84,10 +92,7 @@ Route::middleware(['auth'])->group(function ()     /* Roda o middleware de auten
     });
 
     /* Aniversariante */
-
-    /* Autenticação */
-   Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
     Route::get('/dashboard/parties/create', [PartyController::class, 'create'])->name('parties.create');
     Route::post('/dashboard/parties/create', [PartyController::class, 'store'])->name('parties.store');
