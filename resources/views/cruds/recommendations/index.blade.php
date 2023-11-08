@@ -1,5 +1,3 @@
-<h1>Test</h1>
-
 <table>
     <thead>
         <th>Recomendações</th>
@@ -8,6 +6,11 @@
         @foreach($recommendations as $recommendation)            <!-- Display das recomendacoes -->
             <tr>
                 <td>{{ $recommendation->body }}</td>
+                <td>
+                    <form action="{{  route('recommendations.edit', $recommendation->id) }}">
+                        <button type="submit">Edit</button>
+                    </form>
+                </td>
                 <td>
                     <form action="{{ route('recommendations.destroy', $recommendation->id) }}" method="POST">
                         @csrf
