@@ -14,6 +14,20 @@
         <li><a href="{{ route('parties.create') }}">Agende uma festa</a></li>
     </ul>
 
+    <h1>Sua Festa</h1>
+    @if($party)
+        <ul>
+            <li>Aniversariante: {{ $party->name }}</li>
+            <li>Idade: {{ $party->age }}</li>
+            <li>Convidados: {{ $party->invites }}</li>
+            <li>Cardápio: {{ $party->food }}</li>
+            <li>Data: {{ $party->date }}</li>
+            <li>Status: {{ $party->status }}</li>
+        </ul>
+    @else
+        <h2>Nenhuma festa criada...</h2>
+    @endif
+
     <table>
     <thead>
         <th>Recomendações</th>

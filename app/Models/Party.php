@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Party extends Model
 {
@@ -18,4 +19,9 @@ class Party extends Model
         'food',
         'date'
     ];
+
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);   /* Procura pelo 'User' Model que possua um 'id' igual ao 'user_id' */
+    }
 }
