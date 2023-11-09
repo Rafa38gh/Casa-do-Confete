@@ -47,6 +47,6 @@ class PartyController extends Controller
 
         $party->delete();
 
-        return redirect()->route('admin.index');
+        return back();
     }
 }

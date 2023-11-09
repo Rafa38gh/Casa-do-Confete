@@ -24,6 +24,11 @@
             <li>Data: {{ $party->date }}</li>
             <li>Status: {{ $party->status }}</li>
         </ul>
+        <form action="{{ route('parties.destroy', $party->id) }}" method="POST">
+            @csrf
+            @method('DELETE')
+            <button type="submit">Deletar</button>
+        </form>
     @else
         <h2>Nenhuma festa criada...</h2>
     @endif
