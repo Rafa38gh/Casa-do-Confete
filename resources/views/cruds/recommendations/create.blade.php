@@ -1,3 +1,6 @@
+<!-- Script para usar o CKEditor -->
+<script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+
 <h1>Nova Recomendação</h1>
 
 <!-- Verificação de erros -->
@@ -11,7 +14,15 @@
 
 <form action="{{ route('recommendations.store') }}" method="POST">
     @csrf
-    <textarea name="body" cols="100" rows="30" placeholder="Escreva as recomendações aqui"></textarea>
+    <textarea name="body" id="body" cols="100" rows="30" placeholder="Escreva as recomendações aqui"></textarea>
 
     <button type="submit">Enviar</button>
 </form>
+
+<script>
+    ClassicEditor
+        .create( document.querySelector( '#body' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+</script>

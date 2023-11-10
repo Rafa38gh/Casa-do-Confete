@@ -17,11 +17,12 @@
                 <td>{{ $food->drink }}</td>
                 <td>{{ $food->price }}</td>
 
-                <form action="{{ route('foods.destroy', $food->id) }}" method="POST">
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit">Deletar</button>
-                </form>
+                <td>
+                    <form action="{{ route('foods.destroy', $food->id) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit">Deletar</button>
+                    </form>
                 </td>
             </tr>
         @endforeach 
