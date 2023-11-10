@@ -53,6 +53,7 @@ Route::middleware(['auth'])->group(function ()     /* Roda o middleware de auten
         /* Gerenciamento das festas */
         Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
         Route::get('/admin/parties', [PartyController::class, 'index'])->name('admin.parties');
+        Route::patch('/admin/parties/{id}', [PartyController::class, 'updateStatus'])->name('parties.update');
 
 
         /* Gerenciamento do cardápio */

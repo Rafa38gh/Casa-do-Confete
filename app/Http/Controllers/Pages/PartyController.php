@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Pages;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StorePartyRequest;
+use App\Http\Requests\UpdatePartyRequest;
 use App\Models\Party;
 use App\Models\Food;
 use Illuminate\Support\Facades\Auth;
@@ -36,6 +37,28 @@ class PartyController extends Controller
         $party = $party->create($data);
 
         return redirect()->route('dashboard');
+    }
+
+    public function updateStatus(string|int $id)
+    {
+        $party = Party::find($id);
+
+        if ($party->status == 'em espera')
+        {
+            $party->status = 'aprovado';
+        }
+        elseif ($party->status == 'aprovado')
+        {
+            $party->status = 'negado';
+        }
+        else
+        {
+            $party->status = 'em espera';
+        }
+
+        $party->save();
+
+        return back();
     }
 
     public function destroy(string|int $id)     /* Recebe o id da festa epecífica a ser deletada */

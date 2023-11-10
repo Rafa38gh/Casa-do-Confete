@@ -19,7 +19,7 @@ return new class extends Migration
             $table->integer('invites');
             $table->string('food');
             $table->dateTime('date', 0);
-            $table->enum('status', ['a', 'w', 'd'])->default('w');    /* Controla os status dos pedidos ('Approved', 'Waiting', 'Denied') */
+            $table->enum('status', ['aprovado', 'em espera', 'negado'])->default('em espera');    /* Controla os status dos pedidos ('Approved', 'Waiting', 'Denied') */
             $table->timestamps();
         });
     }

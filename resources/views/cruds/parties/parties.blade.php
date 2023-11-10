@@ -18,6 +18,15 @@
                 <td>{{ $party->food }}</td>
                 <td>{{ $party->date }}</td>
                 <td>{{ $party->status }}</td>
+
+                <td>
+                    <form action="{{ route('parties.update', $party->id) }}" method="POST">
+                        @csrf
+                        @method('PATCH')
+                        <button type="submit">Alterar Status</button>
+                    </form>
+                </td>
+
                 <td>
                     <form action="{{ route('parties.destroy', $party->id) }}" method="POST">
                         @csrf
