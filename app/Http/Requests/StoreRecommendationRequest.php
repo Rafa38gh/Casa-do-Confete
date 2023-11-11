@@ -22,7 +22,7 @@ class StoreRecommendationRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'body' => 'required|min:10|max:255'
+            'body' => 'required|min:10'
         ];
     }
 }

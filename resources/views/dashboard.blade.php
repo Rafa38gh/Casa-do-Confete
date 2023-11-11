@@ -40,7 +40,7 @@
     <tbody>
         @foreach($recommendations as $recommendation)            <!-- Display das recomendacoes -->
             <tr>
-                <td>{{ $recommendation->body }}</td>
+                <td>{!! $recommendation->body !!}</td>
             </tr>
         @endforeach 
     </tbody>

@@ -13,8 +13,8 @@
         @foreach($foods as $food)            <!-- Display das festas marcadas -->
             <tr>
                 <td>{{ $food->name }}</td>
-                <td>{{ $food->body }}</td>
-                <td>{{ $food->drink }}</td>
+                <td>{!! $food->body !!}</td>
+                <td>{!! $food->drink !!}</td>
                 <td>{{ $food->price }}</td>
 
                 <td>

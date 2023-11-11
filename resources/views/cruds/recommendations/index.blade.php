@@ -5,7 +5,7 @@
     <tbody>
         @foreach($recommendations as $recommendation)            <!-- Display das recomendacoes -->
             <tr>
-                <td>{{ $recommendation->body }}</td>
+                <td>{!! $recommendation->body !!}</td>
                 <td>
                     <form action="{{  route('recommendations.edit', $recommendation->id) }}">
                         <button type="submit">Edit</button>
