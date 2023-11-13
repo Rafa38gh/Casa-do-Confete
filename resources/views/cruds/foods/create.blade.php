@@ -1,3 +1,4 @@
+<!-- Script para usar o CKEditor -->
 <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
 
 <h1>Novo Cardápio</h1>
@@ -13,8 +14,8 @@
 <form action="{{ route('foods.store') }}" method="POST">
     @csrf
     <input type="text" placeholder="Título do Cardápio" name="name" size="30" value="{{ old('name') }}">
-    <textarea name="body" id="body" cols="100" rows="30" placeholder="Conteúdo do cardápio"></textarea>
-    <textarea name="drink" id="drink" cols="50" rows="20" placeholder="Bebidas"></textarea>
+    <textarea name="body" id="body" cols="100" rows="30" placeholder="Conteúdo do cardápio">{{ old('body') }}</textarea>
+    <textarea name="drink" id="drink" cols="50" rows="20" placeholder="Bebidas">{{ old('drink') }}</textarea>
     <input type="number" placeholder="Preço por pessoa" name="price" value="{{ old('price') }}">
 
     <button type="submit">Enviar</button>

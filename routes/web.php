@@ -7,6 +7,7 @@ use App\Http\Controllers\Logins\OpsController;
 use App\Http\Controllers\Pages\{PartyController};
 use App\Http\Controllers\Pages\{FoodController};
 use App\Http\Controllers\Pages\{RecommendationController};
+use App\Http\Controllers\Pages\{InviteController};
 use App\Http\Controllers\DashboardController;
 use App\Models\Recommendation;
 use Illuminate\Support\Facades\Auth;
@@ -100,5 +101,9 @@ Route::middleware(['auth'])->group(function ()     /* Roda o middleware de auten
     Route::delete('/dashboard/parties/{id}', [PartyController::class, 'destroy'])->name('parties.destroy');
     
 });
+
+/* Registro de convidados */
+Route::get('/party/invite/{id}', [InviteController::class, 'create'])->name('invite.create');
+Route::post('/party/invite/{id}', [InviteController::class, 'store'])->name('invite.store');
 
 require __DIR__.'/auth.php';
