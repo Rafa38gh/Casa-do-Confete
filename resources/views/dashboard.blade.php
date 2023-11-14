@@ -14,6 +14,7 @@
         <li><a href="{{ route('parties.create') }}">Agende uma festa</a></li>
     </ul>
 
+    <!-- Exibe informações da festa -->
     <h1>Sua Festa</h1>
     @if($party)
         <ul>
@@ -33,6 +34,34 @@
         @if($party->status == 'aprovado')
             <h2>Sua festa foi aprovada!!</h2>
             <p>Link de Convite: <a href="{{ route('invite.create', ['id' => $party->id]) }}">{{ route('invite.create', ['id' => $party->id]) }}</a></p>
+
+            <table>
+                <thead>
+                    <th>Convidados Confirmados</th>
+                    <th>CPF</th>
+                    <th>Idade</th>
+                </thead>
+                <tbody>
+                    @foreach($invites as $invite)
+                        @if($invite->party_id == $party->id)
+                        <tr>
+                            <td>{{ $invite->name }}</td>
+                            <td>{{ $invite->cpf }}</td>
+                            <td>{{ $invite->age }}</td>
+                        
+
+                            <td>
+                                <form action="{{ route('invite.delete', $invite->id) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit">Deletar</button>
+                                </form>
+                            </td>
+                        </tr>
+                        @endif
+                    @endforeach
+                </tbody>
+            </table>
         @endif
         
     @else

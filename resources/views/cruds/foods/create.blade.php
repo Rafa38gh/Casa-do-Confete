@@ -20,7 +20,7 @@
 
     <button type="submit">Enviar</button>
 </form>
-    
+
 <script>
     ClassicEditor
         .create( document.querySelector( '#body' ) )

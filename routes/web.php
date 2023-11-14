@@ -99,7 +99,8 @@ Route::middleware(['auth'])->group(function ()     /* Roda o middleware de auten
     Route::get('/dashboard/parties/create', [PartyController::class, 'create'])->name('parties.create');
     Route::post('/dashboard/parties/create', [PartyController::class, 'store'])->name('parties.store');
     Route::delete('/dashboard/parties/{id}', [PartyController::class, 'destroy'])->name('parties.destroy');
-    
+
+    Route::delete('/dashboard/parties/delete/{id}', [DashboardController::class, 'deleteInvite'])->name('invite.delete');
 });
 
 /* Registro de convidados */
