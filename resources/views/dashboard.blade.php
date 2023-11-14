@@ -1,3 +1,4 @@
+<x-app-layout>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Dashboard - Casa do Confete</title>
 </head>
+
 
 <body>
     <h1>Área Logada</h1>
@@ -45,6 +47,6 @@
         @endforeach 
     </tbody>
 </table>
-
 </body>
 </html>
+</x-app-layout>
