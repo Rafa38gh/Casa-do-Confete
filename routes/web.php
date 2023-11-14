@@ -31,12 +31,12 @@ Route::get('/', function ()
 Route::get('/sobre', function () 
 {
     return view('/site/sobre');
-});
+})->name('web.sobre');
 
 Route::get('/cardapio', function () 
 {
     return view('/site/cardapio');
-});
+})->name('web.cardapio');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
