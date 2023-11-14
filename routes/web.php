@@ -91,6 +91,8 @@ Route::middleware(['auth'])->group(function ()     /* Roda o middleware de auten
     Route::middleware(['ops'])->group(function ()
     {
         Route::get('/ops', [OpsController::class, 'index'])->name('ops.index');
+
+        Route::get('/ops/party/{id}', [OpsController::class, 'show'])->name('ops.show');
     });
 
     /* Aniversariante */
