@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('party_id');
             $table->string('name');
-            $table->integer('cpf');
+            $table->string('cpf')->unique();
             $table->integer('age');
             $table->timestamps();
         });
