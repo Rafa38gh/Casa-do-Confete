@@ -1,3 +1,4 @@
+<x-app-layout>
 <!DOCTYPE html>
 <html lang="pt">
 <head>
@@ -17,3 +18,4 @@
     <a href="{{ route('admin.foods') }}">Visualizar Cardápio</a>
 </body>
 </html>
+</x-app-layout>

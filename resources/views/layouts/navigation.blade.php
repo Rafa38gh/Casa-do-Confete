@@ -1,8 +1,11 @@
 <nav x-data="{ open: false }" class="border-b border-gray-100" style="background-color: rgba(255, 107, 142, 0.7);">
-    <!-- Primary Navigation Menu -->
-    <div class="max-w-auto mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between h-16">
-            <div class="flex">
+    
+            
+        @guest
+                    <!-- Primary Navigation Menu -->
+                    <div class="max-w-auto mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="flex justify-end h-16">
+                    <div class="flex">
                 <!-- Logo -->
                 <!-- MUDAR TAMANHO -->
                 <div class="shrink-0 flex items-center">
@@ -10,9 +13,8 @@
                         <x-application-logo class="block h-auto w-auto fill-current text-gray-800 dark:text-gray-200" />
                     </a>
                 </div>
-
                 <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                <div class="space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('web.index')" :active="request()->routeIs('web.index')">
                         {{ __('Home') }}
                     </x-nav-link>
@@ -20,7 +22,45 @@
                     <x-nav-link :href="route('web.sobre')" :active="request()->routeIs('web.sobre')">
                         {{ __('Sobre') }}
                     </x-nav-link>
-                   
+                
+                    <x-nav-link :href="route('web.cardapio')" :active="request()->routeIs('web.cardapio')">
+                        {{ __('Cardápio') }}
+                    </x-nav-link>
+
+                    <x-nav-link :href="route('login')" :active="request()->routeIs('login')">
+                        {{ __('Login') }}
+                    </x-nav-link>
+
+                    <x-nav-link :href="route('register')" :active="request()->routeIs('register')">
+                        {{ __('Registrar') }}
+                    </x-nav-link>
+                </div>
+            </div>
+        @endguest
+
+
+@auth
+                <!-- Primary Navigation Menu -->
+                <div class="max-w-auto mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-end h-16">
+                <div class="flex">
+                <!-- Logo -->
+                <!-- MUDAR TAMANHO -->
+                <div class="absolute left-2 shrink-0 items-center">
+                    <a href="{{ route('web.index') }}">
+                        <x-application-logo class="block h-5 text-gray-800" />
+                    </a>
+                </div>
+                <!-- Navigation Links -->
+                <div class="space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('web.index')" :active="request()->routeIs('web.index')">
+                        {{ __('Home') }}
+                    </x-nav-link>
+
+                    <x-nav-link :href="route('web.sobre')" :active="request()->routeIs('web.sobre')">
+                        {{ __('Sobre') }}
+                    </x-nav-link>
+                
                     <x-nav-link :href="route('web.cardapio')" :active="request()->routeIs('web.cardapio')">
                         {{ __('Cardápio') }}
                     </x-nav-link>
@@ -64,7 +104,7 @@
                     </x-slot>
                 </x-dropdown>
             </div>
-
+        
             <!-- Hamburger -->
             <div class="-mr-2 flex items-center sm:hidden">
                 <button @click="open = ! open" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 dark:text-gray-500 hover:text-gray-500 dark:hover:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-900 focus:outline-none focus:bg-gray-100 dark:focus:bg-gray-900 focus:text-gray-500 dark:focus:text-gray-400 transition duration-150 ease-in-out">
@@ -110,4 +150,5 @@
             </div>
         </div>
     </div>
+@endauth
 </nav>

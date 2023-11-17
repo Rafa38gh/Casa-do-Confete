@@ -1,3 +1,4 @@
+<x-app-layout>
 <!DOCTYPE html>
 <html lang="pt">
 <head>
@@ -7,21 +8,7 @@
     <title>Cardápio - Casa do Confete</title>
 </head>
 <body>
-    <!-- Cabeçalho -->
-    <header>
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/sobre">Sobre</a></li>
-            <li>Cardápio</li>
-            <li>Login</li>
-            <li>Cadastro</li>
-        </ul>
-    </header>
-
     <main>
-        <div class="mainTitle">
-            <h2>Cardápio</h2>
-        </div>
         <div class="text">
             <p>
                 Na Casa do Confete, oferecemos uma variedade de seleções de cardápios
@@ -49,3 +36,4 @@
     </footer>
 </body>
 </html>
+</x-app-layout>

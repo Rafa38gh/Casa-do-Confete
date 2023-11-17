@@ -1,3 +1,4 @@
+<x-app-layout>
 <!DOCTYPE html>
 <html lang="pt">
 <head>
@@ -8,21 +9,7 @@
 </head>
 
 <body>
-    <!-- Cabeçalho -->
-    <header>
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li>Sobre</li>
-            <li><a href="/cardapio">Cardápio</a></li>
-            <li>Login</li>
-            <li>Cadastro</li>
-        </ul>
-    </header>
-
     <main>
-        <div class="mainTitle">
-            <h2>Sobre</h2>
-        </div>
         <div class="text">
             
                 <h3>Nossa Proposta:</h3>
@@ -74,3 +61,4 @@
     </footer>
 </body>
 </html>
+</x-app-layout>
