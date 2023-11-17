@@ -8,6 +8,7 @@
         <th>Cardápio</th>
         <th>Data</th>
         <th>Status</th>
+        <th>Alterar Status</th>
     </thead>
     <tbody>
         @foreach($parties as $party)            <!-- Display das festas marcadas -->
@@ -23,7 +24,14 @@
                     <form action="{{ route('parties.update', $party->id) }}" method="POST">
                         @csrf
                         @method('PATCH')
-                        <button type="submit">Alterar Status</button>
+
+                        <select name="status">
+                            <option value="em espera">Em Espera</option>
+                            <option value="aprovado">Aprovado</option>
+                            <option value="negado">Negado</option>
+                        </select>
+
+                        <button type="submit">Enviar</button>
                     </form>
                 </td>
 

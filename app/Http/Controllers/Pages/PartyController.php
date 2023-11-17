@@ -39,24 +39,13 @@ class PartyController extends Controller
         return redirect()->route('dashboard');
     }
 
-    public function updateStatus(string|int $id)
+    public function updateStatus(UpdatePartyRequest $request, string|int $id)
     {
         $party = Party::find($id);
 
-        if ($party->status == 'em espera')
-        {
-            $party->status = 'aprovado';
-        }
-        elseif ($party->status == 'aprovado')
-        {
-            $party->status = 'negado';
-        }
-        else
-        {
-            $party->status = 'em espera';
-        }
-
-        $party->save();
+        $data = $request->all();
+        
+        $party->update($data);
 
         return back();
     }
