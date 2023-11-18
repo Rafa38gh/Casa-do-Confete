@@ -1,3 +1,5 @@
+<x-app-layout>
+<title>Visualização das Festas</title>
 <h1>Visualização das Festas</h1>
 
 <table>
@@ -38,3 +40,4 @@
         @endforeach 
     </tbody>
 </table>
+</x-app-layout>

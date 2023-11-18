@@ -1,6 +1,5 @@
-<h1>Cardápios</h1>
-
-<a href="{{ route('foods.create') }}">Novo cardápio</a>
+<x-app-layout>
+<title>Cardápios</title>
 
 <table>
     <thead>
@@ -28,5 +27,7 @@
         @endforeach 
     </tbody>
 </table>
-
-
+<x-primary-button>
+    <a href="{{ route('foods.create') }}">Novo cardápio</a>
+</x-primary-button>
+</x-app-layout>

@@ -1,4 +1,5 @@
-<h1>Edit</h1>
+<x-app-layout>
+<title>Edit</title>
 
 
 <form action="{{ route('recommendations.update',['recommendation' => $recommendation->id]) }}" method="POST">
@@ -8,3 +9,4 @@
 
     <button type="submit">Atualizar</button>
 </form>
+</x-app-layout>

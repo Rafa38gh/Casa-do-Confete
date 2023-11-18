@@ -10,12 +10,11 @@
 
 
 <body>
-    <h1>Área Logada</h1>
-
+    <x-primary-button>
     <ul>
         <li><a href="{{ route('parties.create') }}">Agende uma festa</a></li>
     </ul>
-
+    </x-primary-button>
     <h1>Sua Festa</h1>
     @if($party)
         <ul>

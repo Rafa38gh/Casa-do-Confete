@@ -1,3 +1,5 @@
+<x-app-layout>
+<title>Recomendações</title>
 <table>
     <thead>
         <th>Recomendações</th>
@@ -22,4 +24,7 @@
     </tbody>
 </table>
 
-<a href="{{ route('recommendations.create') }}">Adicionar Recomendações</a>
+<x-primary-button>
+    <a href="{{ route('recommendations.create') }}">Adicionar Recomendações</a>
+</x-primary-button>
+</x-app-layout>

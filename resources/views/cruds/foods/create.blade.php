@@ -1,6 +1,7 @@
+<x-app-layout>
 <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
 
-<h1>Novo Cardápio</h1>
+<title>Novo Cardápio</title>
 
 @if ($errors->any())
     @foreach ($errors->all() as $error)
@@ -16,8 +17,8 @@
     <textarea name="body" id="body" cols="100" rows="30" placeholder="Conteúdo do cardápio"></textarea>
     <textarea name="drink" id="drink" cols="50" rows="20" placeholder="Bebidas"></textarea>
     <input type="number" placeholder="Preço por pessoa" name="price" value="{{ old('price') }}">
-
     <button type="submit">Enviar</button>
+
 </form>
     
 <script>
@@ -33,4 +34,5 @@
         .catch( error => {
             console.error( error );
         } );
-    </script>
+</script>
+</x-app-layout>
