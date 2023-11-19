@@ -17,6 +17,12 @@
                 <td>{{ $food->price }}</td>
 
                 <td>
+                    <form action="{{ route('foods.edit', $food->id) }}">
+                        <button type="submit">Editar</button>
+                    </form>
+                </td>
+
+                <td>
                     <form action="{{ route('foods.destroy', $food->id) }}" method="POST">
                         @csrf
                         @method('DELETE')

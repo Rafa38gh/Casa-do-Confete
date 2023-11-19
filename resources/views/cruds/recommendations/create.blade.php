@@ -15,7 +15,7 @@
 
 <form action="{{ route('recommendations.store') }}" method="POST">
     @csrf
-    <textarea name="body" id="body" cols="100" rows="30" placeholder="Escreva as recomendações aqui"></textarea>
+    <textarea name="body" id="body" cols="100" rows="30" placeholder="Escreva as recomendações aqui">{{ old('body') }}</textarea>
 
     <button type="submit">Enviar</button>
 </form>

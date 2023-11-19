@@ -7,6 +7,7 @@ use App\Http\Controllers\Logins\OpsController;
 use App\Http\Controllers\Pages\{PartyController};
 use App\Http\Controllers\Pages\{FoodController};
 use App\Http\Controllers\Pages\{RecommendationController};
+use App\Http\Controllers\Pages\{InviteController};
 use App\Http\Controllers\DashboardController;
 use App\Models\Recommendation;
 use Illuminate\Support\Facades\Auth;
@@ -60,6 +61,8 @@ Route::middleware(['auth'])->group(function ()     /* Roda o middleware de auten
         Route::get('/admin/foods', [FoodController::class, 'index'])->name('admin.foods');
         Route::get('/admin/foods/create', [FoodController::class, 'create'])->name('foods.create');
         Route::post('/admin/foods/create', [FoodController::class, 'store'])->name('foods.store');
+        Route::get('/admin/foods/edit/{id}', [FoodController::class, 'edit'])->name('foods.edit');
+        Route::put('/admin/foods/edit/{id}', [FoodController::class, 'update'])->name('foods.update');
         Route::delete('/admin/foods/{id}', [FoodController::class, 'destroy'])->name('foods.destroy');
 
         /* Gerenciamento das recomendações */
@@ -90,6 +93,8 @@ Route::middleware(['auth'])->group(function ()     /* Roda o middleware de auten
     Route::middleware(['ops'])->group(function ()
     {
         Route::get('/ops', [OpsController::class, 'index'])->name('ops.index');
+
+        Route::get('/ops/party/{id}', [OpsController::class, 'show'])->name('ops.show');
     });
 
     /* Aniversariante */
@@ -98,7 +103,12 @@ Route::middleware(['auth'])->group(function ()     /* Roda o middleware de auten
     Route::get('/dashboard/parties/create', [PartyController::class, 'create'])->name('parties.create');
     Route::post('/dashboard/parties/create', [PartyController::class, 'store'])->name('parties.store');
     Route::delete('/dashboard/parties/{id}', [PartyController::class, 'destroy'])->name('parties.destroy');
-    
+
+    Route::delete('/dashboard/parties/delete/{id}', [DashboardController::class, 'deleteInvite'])->name('invite.delete');
 });
+
+/* Registro de convidados */
+Route::get('/party/invite/{id}', [InviteController::class, 'create'])->name('invite.create');
+Route::post('/party/invite/{id}', [InviteController::class, 'store'])->name('invite.store');
 
 require __DIR__.'/auth.php';

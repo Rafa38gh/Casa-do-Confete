@@ -7,6 +7,7 @@ use App\Http\Requests\StorePartyRequest;
 use App\Http\Requests\UpdatePartyRequest;
 use App\Models\Party;
 use App\Models\Food;
+use App\Models\Invite;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
@@ -39,35 +40,33 @@ class PartyController extends Controller
         return redirect()->route('dashboard');
     }
 
-    public function updateStatus(string|int $id)
+    public function updateStatus(UpdatePartyRequest $request, string|int $id)
     {
         $party = Party::find($id);
 
-        if ($party->status == 'em espera')
-        {
-            $party->status = 'aprovado';
-        }
-        elseif ($party->status == 'aprovado')
-        {
-            $party->status = 'negado';
-        }
-        else
-        {
-            $party->status = 'em espera';
-        }
-
-        $party->save();
+        $data = $request->all();
+        
+        $party->update($data);
 
         return back();
     }
 
-    public function destroy(string|int $id)     /* Recebe o id da festa epecífica a ser deletada */
+    public function destroy(string|int $id, Invite $invite)     /* Recebe o id da festa epecífica a ser deletada */
     {
         if(!$party = Party::find($id))
         {
             return back();
         }
 
+        $invites = $invite->all();
+
+        foreach($invites as $invites)
+        {
+            if($invites->party_id == $id)
+            {
+                $invites->delete();
+            }
+        }
         $party->delete();
 
         return back();

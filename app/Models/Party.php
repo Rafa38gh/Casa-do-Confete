@@ -17,7 +17,8 @@ class Party extends Model
         'age',
         'invites',
         'food',
-        'date'
+        'date',
+        'status'
     ];
 
     public function user(): BelongsTo

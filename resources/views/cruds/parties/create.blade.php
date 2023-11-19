@@ -18,7 +18,7 @@
 
     <div>
         @foreach($foods as $food)
-        <input type="radio" id="option{{ $loop->iteration }}" name="food" value="{{ $food->name }}">
+        <input type="radio" id="option{{ $loop->iteration }}" name="food" value="{{ $food->id }}">
         <label for="option{{ $loop->iteration }}">{{ $food->name }}</label>
         @endforeach
     </div>
