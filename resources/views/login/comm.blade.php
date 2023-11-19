@@ -1,3 +1,4 @@
+<x-app-layout>
 <!DOCTYPE html>
 <html lang="pt">
 <head>
@@ -8,13 +9,19 @@
 </head>
 
 <body>
-    <h1>Área Comercial</h1>
-
     <ul>
+    <x-primary-button>
         <li> <a href="{{ route('comm.parties') }}">Visualizar Festas</a> </li>
+    </x-primary-button>
+    <x-primary-button>
         <li> <a href="{{ route('comm.foods') }}">Visualizar Cardápios</a> </li>
+    </x-primary-button>
+    <x-primary-button>
         <li> <a href="{{ route('comm.recommendations') }}">Recomendações do Buffet</a> </li>
+    </x-primary-button>
     </ul>
+    </x-primary-button>
 
 </body>
 </html>
+</x-app-layout>

@@ -1,3 +1,4 @@
+<x-app-layout>
 <!DOCTYPE html>
 <html lang="pt">
 <head>
@@ -7,14 +8,16 @@
     <title>Dashboard - Casa do Confete</title>
 </head>
 
-<body>
-    <h1>Área Logada</h1>
 
+<body>
+    <x-primary-button>
     <ul>
         <li><a href="{{ route('parties.create') }}">Agende uma festa</a></li>
     </ul>
+    
+    </x-primary-button>
 
-    <!-- Exibe informações da festa -->
+  <!-- Exibe informações da festa -->
     <h1>Sua Festa</h1>
     @if($party)
         <ul>
@@ -83,3 +86,4 @@
 
 </body>
 </html>
+</x-app-layout>

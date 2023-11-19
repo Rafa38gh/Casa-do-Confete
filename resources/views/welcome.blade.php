@@ -1,3 +1,4 @@
+<x-app-layout>
 <!DOCTYPE html>
 <html lang="pt">
 <head>
@@ -8,25 +9,9 @@
 </head>
 
 <body>
-    <!-- Cabeçalho -->
-    <header>
-        <ul>
-            <li>Home</li>
-            <li><a href="/sobre">Sobre</a></li>
-            <li><a href="/cardapio">Cardápio</a></li>
-            <li>Login</li>
-            <li>Cadastro</li>
-        </ul>
-    </header>
-
     <!-- Título -->
     <div id="title">
-        <div class="topBand">
-            <h1>Casa do Confete</h1>
-        </div>
-
         <img src="{{ URL::asset('images/header.png') }}" alt="Imagem de capa">
-
     </div>
 
     <!-- Corpo principal da página -->
@@ -122,3 +107,4 @@
     </footer>
 </body>
 </html>
+</x-app-layout>

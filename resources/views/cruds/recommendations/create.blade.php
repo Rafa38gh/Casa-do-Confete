@@ -1,7 +1,8 @@
 <!-- Script para usar o CKEditor -->
+<x-app-layout>
 <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
 
-<h1>Nova Recomendação</h1>
+<title>Nova Recomendação</title>
 
 <!-- Verificação de erros -->
 @if ($errors->any())
@@ -26,3 +27,4 @@
             console.error( error );
         } );
 </script>
+</x-app-layout>

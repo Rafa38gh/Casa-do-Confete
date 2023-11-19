@@ -1,4 +1,5 @@
-<h1>Agendamento de Festa</h1>
+<x-app-layout>
+<title>Agendamento de Festa</title>
 
 <!-- Verificação de erros -->
 @if ($errors->any())
@@ -28,3 +29,4 @@
 
     <button type="submit">Agendar Festa</button>
 </form>
+</x-app-layout>
