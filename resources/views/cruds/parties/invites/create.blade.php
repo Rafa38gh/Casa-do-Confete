@@ -1,3 +1,12 @@
+<!-- Verificação de erros -->
+@if ($errors->any())
+    @foreach ($errors->all() as $error)
+        <ul>
+            <li>{{ $error }}</li>
+        </ul>
+    @endforeach
+@endif
+
 <h1>Formulário de Convite</h1>
 
 <form action="{{ route('invite.store', ['id' => $party->id]) }}" method="POST">
