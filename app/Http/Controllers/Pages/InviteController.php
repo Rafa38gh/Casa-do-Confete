@@ -22,15 +22,26 @@ class InviteController extends Controller
         abort(403);
     }
 
-    public function store(StoreInviteRequest $request, Invite $invite, int $id)
+    public function store(StoreInviteRequest $request, $id)
     {
-        $party = Party::find($id);
+        $party = Party::findOrFail($id);
 
-        $data = $request->only(['name', 'cpf', 'age']);
-        $data['party_id'] = $id;
+        if($party->status !== 'aprovado')
+        {
+            abort(403);
+        }
 
-        $invite = $invite->create($data);
+        foreach ($request->input('guests') as $guest) {
+            $invite = new Invite([
+                'party_id' => $party->id,
+                'name' => $guest['name'],
+                'cpf' => $guest['cpf'],
+                'age' => $guest['age'],
+            ]);
 
-        return back();
+            $invite->save();
+        }
+
+        return redirect("/")->with("Convidados adicionados com sucesso!");
     }
 }

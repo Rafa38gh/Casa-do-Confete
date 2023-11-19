@@ -22,9 +22,9 @@ class StoreInviteRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required|min:3|max:50',
-            'cpf' => 'required',
-            'age' => 'required|min:1'
+            'guests.*.name' => 'required|string|min:3|max:50',
+            'guests.*.cpf' => 'required',
+            'guests.*.age' => 'required|numeric|min:1'
         ];
     }
 }
