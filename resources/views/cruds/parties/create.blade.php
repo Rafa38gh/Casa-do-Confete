@@ -1,32 +1,34 @@
 <x-app-layout>
-<title>Agendamento de Festa</title>
+    <title>Agendamento de Festa</title>
 
-<!-- Verificação de erros -->
-@if ($errors->any())
-    @foreach ($errors->all() as $error)
-        <ul>
-            <li>{{ $error }}</li>
-        </ul>
-    @endforeach
-@endif
-
-<form action="{{ route('parties.store') }}" method="POST">
-    @csrf
-    <input type="text" placeholder="Nome do Aniversariante" name="name" size="30" value="{{ old('name') }}">
-    <input type="number" placeholder="Idade a ser comemorada" name="age"  value="{{ old('age') }}">
-    <input type="number" placeholder="Quantidade de convidados" name="invites" value="{{ old('invites') }}">
-
-    <div>
-        @foreach($foods as $food)
-        <input type="radio" id="option{{ $loop->iteration }}" name="food" value="{{ $food->id }}">
-        <label for="option{{ $loop->iteration }}">{{ $food->name }}</label>
+    <!-- Verificação de erros -->
+    @if ($errors->any())
+        @foreach ($errors->all() as $error)
+            <ul>
+                <li>{{ $error }}</li>
+            </ul>
         @endforeach
-    </div>
+    @endif
 
-    <div>
-        <input type="datetime-local" name="date" value="{{ old('date') }}">
-    </div>
+    <h1 class="font-bold text-center text-4xl mt-10">Nova Festa</h1>
 
-    <button type="submit">Agendar Festa</button>
-</form>
+    <form action="{{ route('parties.store') }}" method="POST" class="flex flex-col items-center mt-10">
+        @csrf
+        <input type="text" placeholder="Nome do Aniversariante" name="name" size="30" value="{{ old('name') }}" class="mb-4">
+        <input type="number" placeholder="Idade a ser comemorada" name="age"  value="{{ old('age') }}" class="mb-4">
+        <input type="number" placeholder="Quantidade de convidados" name="invites" value="{{ old('invites') }}" class="mb-4">
+
+        <div class="flex items-center">
+            @foreach($foods as $food)
+            <input type="radio" id="option{{ $loop->iteration }}" name="food" value="{{ $food->id }}" class="mr-2">
+            <label for="option{{ $loop->iteration }}" class="mr-2">{{ $food->name }}</label>
+            @endforeach
+        </div>
+
+        <div class="mt-4">
+            <input type="datetime-local" name="date" value="{{ old('date') }}">
+        </div>
+
+        <button type="submit" class="bg-pink-400 hover:bg-pink-500 text-white font-bold py-2 px-4 rounded mt-4">Agendar Festa</button>
+    </form>
 </x-app-layout>

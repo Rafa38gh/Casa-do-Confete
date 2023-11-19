@@ -8,7 +8,9 @@ use App\Http\Controllers\Pages\{PartyController};
 use App\Http\Controllers\Pages\{FoodController};
 use App\Http\Controllers\Pages\{RecommendationController};
 use App\Http\Controllers\Pages\{InviteController};
+use App\Http\Controllers\Pages\UpdateFoodController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Requests\UpdateFoodRequest;
 use App\Models\Recommendation;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -100,11 +102,17 @@ Route::middleware(['auth'])->group(function ()     /* Roda o middleware de auten
     /* Aniversariante */
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
+    /* Festas */
     Route::get('/dashboard/parties/create', [PartyController::class, 'create'])->name('parties.create');
     Route::post('/dashboard/parties/create', [PartyController::class, 'store'])->name('parties.store');
     Route::delete('/dashboard/parties/{id}', [PartyController::class, 'destroy'])->name('parties.destroy');
 
+    /* Convites */
     Route::delete('/dashboard/parties/delete/{id}', [DashboardController::class, 'deleteInvite'])->name('invite.delete');
+
+    /* Cardápio */
+    Route::get('/dashboard/foods/{party}', [UpdateFoodController::class, 'index'])->name('change.food');
+    Route::patch('/dashboard/foods/{party}', [UpdateFoodController::class, 'update'])->name('update.food');
 });
 
 /* Registro de convidados */

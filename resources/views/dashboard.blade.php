@@ -8,23 +8,21 @@
     <title>Dashboard - Casa do Confete</title>
 </head>
 
-
 <body>
-    <x-primary-button>
+    <h1>Área Logada</h1>
+
     <ul>
         <li><a href="{{ route('parties.create') }}">Agende uma festa</a></li>
     </ul>
-    
-    </x-primary-button>
 
-  <!-- Exibe informações da festa -->
+    <!-- Exibe informações da festa -->
     <h1>Sua Festa</h1>
     @if($party)
         <ul>
             <li>Aniversariante: {{ $party->name }}</li>
             <li>Idade: {{ $party->age }}</li>
             <li>Convidados: {{ $party->invites }}</li>
-            <li>Cardápio: {{ $party->food }}</li>
+            <li>Cardápio: {{ $chosenFood->name }}</li>
             <li>Data: {{ $party->date }}</li>
             <li>Status: {{ $party->status }}</li>
         </ul>
@@ -63,6 +61,30 @@
                         </tr>
                         @endif
                     @endforeach
+                </tbody>
+            </table>
+
+            <!-- Dados do Cardápio -->
+            <table>
+                <thead>
+                    <th>Cardápio</th>
+                    <th>Comidas</th>
+                    <th>Bebidas</th>
+                    <th>Preço por Pessoa</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{ $chosenFood->name }}</td>
+                        <td>{!! $chosenFood->body !!}</td>
+                        <td>{!! $chosenFood->drink !!}</td>
+                        <td>{{ $chosenFood->price }}</td>
+
+                        <td>
+                            <form action="{{ route('change.food', $party->id) }}">
+                                <button type="submit">Alterar Cardápio</button>
+                            </form>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
         @endif
