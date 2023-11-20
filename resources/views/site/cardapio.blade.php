@@ -28,6 +28,23 @@
             </p>
         </div>
     </main>
+    <body>
+
+    <div class="titleFaixa">
+        <h1>Cardápio</h1>
+        <div class="green-band"></div>
+    </div>
+
+        <main>
+            <div class="text">
+                <p>
+                    Na Casa do Confete, oferecemos uma variedade de seleções de cardápios
+                    que transformam cada festa em uma experiência gastronômica única,
+                    desde opções saudáveis e deliciosas até iguarias indulgentes que certamente 
+                    farão todos os convidados sorrir.
+                </p>
+            </div>
+        </main>
 
         <!-- Rodapé -->
         <footer>
