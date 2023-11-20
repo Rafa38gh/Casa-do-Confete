@@ -44,6 +44,25 @@
                     farão todos os convidados sorrir.
                 </p>
             </div>
+
+            <div class="table-container">
+                <table class="table table-bordered table-striped mx-auto">
+                    <thead class="bg-green-200">
+                        <th class="border-l border-t border-r">Opções</th>
+                        <th class="border-l border-t border-r">Comidas</th>
+                        <th class="border-l border-t border-r">Bebidas</th>
+                    </thead>
+                    <tbody>
+                        @foreach($foods as $food)
+                            <tr>
+                                <td class="border-l border-r">{{ $food->name }}</td>
+                                <td class="border-l border-r">{!! $food->body !!}</td>
+                                <td class="border-l border-r">{!! $food->drink !!}</td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
         </main>
 
         <!-- Rodapé -->
