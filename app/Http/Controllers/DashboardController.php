@@ -35,7 +35,7 @@ class DashboardController extends Controller
     {
         if(!$invite = Invite::find($id))
         {
-            return back();
+            abort(404);
         }
 
         $invite->delete();

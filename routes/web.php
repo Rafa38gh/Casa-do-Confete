@@ -10,6 +10,8 @@ use App\Http\Controllers\Pages\{RecommendationController};
 use App\Http\Controllers\Pages\{InviteController};
 use App\Http\Controllers\Pages\UpdateFoodController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\BookingController;
+use App\Http\Controllers\ResearchController;
 use App\Http\Requests\UpdateFoodRequest;
 use App\Models\Recommendation;
 use Illuminate\Support\Facades\Auth;
@@ -53,6 +55,14 @@ Route::middleware(['auth'])->group(function ()     /* Roda o middleware de auten
     /* Admin */
     Route::middleware(['admin'])->group(function ()
     {
+        /* Gerenciamento das datas */
+        Route::get('/admin/bookings', [BookingController::class, 'show'])->name('booking.show');
+        Route::get('/admin/bookings/create', [BookingController::class, 'create'])->name('booking.create');
+        Route::post('/admin/bookings/create', [BookingController::class, 'store'])->name('booking.store');
+        Route::get('/admin/bookings/{booking}/edit', [BookingController::class, 'edit'])->name('booking.edit');
+        Route::put('/admin/bookings/{booking}/edit', [BookingController::class, 'update'])->name('booking.update');
+        Route::delete('/admin/bookings/{booking}', [BookingController::class, 'destroy'])->name('booking.destroy');
+
         /* Gerenciamento das festas */
         Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
         Route::get('/admin/parties', [PartyController::class, 'index'])->name('admin.parties');
@@ -75,11 +85,16 @@ Route::middleware(['auth'])->group(function ()     /* Roda o middleware de auten
         Route::put('/admin/recommendations/{recommendation}', [RecommendationController::class, 'update'])->name('recommendations.update');
         Route::delete('/admin/recommendations/{recommendation}', [RecommendationController::class, 'destroy'])->name('recommendations.destroy');
 
+        /* Gerenciamento das pesquisas de satisfação */
+        Route::get('/admin/research', [ResearchController::class, 'index'])->name('research.index');
     });
 
     /* Comercial */
     Route::middleware(['comm'])->group(function ()
     {
+        /* Visualização das datas */
+        Route::get('/commercial/bookings', [BookingController::class, 'show'])->name('commBooking.show');
+
         /* Gerenciamento das festas */
         Route::get('/commercial', [CommController::class, 'index'])->name('comm.index');
         Route::get('/commercial/parties', [PartyController::class, 'index'])->name('comm.parties');
@@ -96,7 +111,10 @@ Route::middleware(['auth'])->group(function ()     /* Roda o middleware de auten
     {
         Route::get('/ops', [OpsController::class, 'index'])->name('ops.index');
 
+        /* Informações de festa */
         Route::get('/ops/party/{id}', [OpsController::class, 'show'])->name('ops.show');
+        Route::get('/ops/invite/create/{party}', [InviteController::class, 'create'])->name('ops.create');
+        Route::delete('/ops/party/{id}', [InviteController::class, 'destroy'])->name('invite.destroy');
     });
 
     /* Aniversariante */
@@ -113,6 +131,10 @@ Route::middleware(['auth'])->group(function ()     /* Roda o middleware de auten
     /* Cardápio */
     Route::get('/dashboard/foods/{party}', [UpdateFoodController::class, 'index'])->name('change.food');
     Route::patch('/dashboard/foods/{party}', [UpdateFoodController::class, 'update'])->name('update.food');
+
+    /* Pesquisa de satisfação */
+    Route::get('/dashboard/research', [ResearchController::class, 'create'])->name('research.create');
+    Route::post('/dashboard/research', [ResearchController::class, 'store'])->name('research.store');
 });
 
 /* Registro de convidados */

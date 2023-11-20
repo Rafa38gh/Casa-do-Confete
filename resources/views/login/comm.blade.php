@@ -19,8 +19,11 @@
     <x-primary-button>
         <li> <a href="{{ route('comm.recommendations') }}">Recomendações do Buffet</a> </li>
     </x-primary-button>
-    </ul>
+    <x-primary-button>
+        <li> <a href="{{ route('commBooking.show') }}">Agenda do Buffet</a> </li>
     </x-primary-button>
+    </ul>
+    
 
 </body>
 </html>

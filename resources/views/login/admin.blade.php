@@ -9,17 +9,26 @@
 </head>
 
 <body>
-<x-primary-button>
-    <a href="{{ route('admin.parties') }}">Visualizar Festas</a>
-</x-primary-button>
-    <br>
-<x-primary-button>
-    <a href="{{ route('admin.recommendations') }}">Visualizar Recomendações</a>
-</x-primary-button>
-    <br>
-<x-primary-button>
-    <a href="{{ route('admin.foods') }}">Visualizar Cardápio</a>
-</x-primary-button>
+    <x-primary-button>
+        <a href="{{ route('admin.parties') }}">Visualizar Festas</a>
+    </x-primary-button>
+        <br>
+    <x-primary-button>
+        <a href="{{ route('admin.recommendations') }}">Visualizar Recomendações</a>
+    </x-primary-button>
+        <br>
+    <x-primary-button>
+        <a href="{{ route('admin.foods') }}">Visualizar Cardápio</a>
+    </x-primary-button>
+        <br>
+    <x-primary-button>
+            <a href="{{ route('booking.show') }}">Visualizar Agenda</a>
+    </x-primary-button>
+        <br>
+    <x-primary-button>
+        <a href="{{ route('research.index') }}">Pesquisas de Satisfação</a>
+    </x-primary-button>
+
 </body>
 </html>
 </x-app-layout>

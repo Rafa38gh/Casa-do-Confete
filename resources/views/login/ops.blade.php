@@ -15,7 +15,8 @@
   <table>
       <thead>
           <th>Festas</th>
-          <th>Convidados Confirmados</th>
+          <th>Idade</th>
+          <th>Convidados</th>
           <th>Pacote de Comida</th>
           <th>Data</th>
       </thead>
