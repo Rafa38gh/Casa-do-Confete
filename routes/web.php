@@ -9,6 +9,7 @@ use App\Http\Controllers\Pages\{FoodController};
 use App\Http\Controllers\Pages\{RecommendationController};
 use App\Http\Controllers\Pages\{InviteController};
 use App\Http\Controllers\Pages\UpdateFoodController;
+use App\Http\Controllers\PagesController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\ResearchController;
@@ -28,20 +29,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () 
-{
-    return view('welcome');
-})->name('web.index');
-
-Route::get('/sobre', function () 
-{
-    return view('/site/sobre');
-})->name('web.sobre');
-
-Route::get('/cardapio', function () 
-{
-    return view('/site/cardapio');
-})->name('web.cardapio');
+Route::get('/', [PagesController::class, 'index'])->name('web.index');
+Route::get('/about', [PagesController::class, 'about'])->name('web.sobre');
+Route::get('/foods', [PagesController::class, 'food'])->name('web.cardapio');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

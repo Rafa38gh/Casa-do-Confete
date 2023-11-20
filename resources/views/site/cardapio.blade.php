@@ -8,6 +8,26 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Cardápio - Casa do Confete</title>
     </head>
+<body>
+    <main>
+
+    <div class="flex items-center justify-center bg-green-200 h-32">
+        <h2 class="text-4xl font-bold text-right ml-4">
+            Cardápio
+        </h2>
+    </div>
+        <div class="text-2xl font-bold text-center">
+            <p>
+                Na Casa do Confete, oferecemos uma variedade de seleções de cardápios
+                que transformam cada festa em uma experiência gastronômica única,
+
+            </p>
+            <p>
+            desde opções saudáveis e deliciosas até iguarias indulgentes que certamente 
+            farão todos os convidados sorrir.
+            </p>
+        </div>
+    </main>
     <body>
 
     <div class="titleFaixa">
@@ -23,6 +43,25 @@
                     desde opções saudáveis e deliciosas até iguarias indulgentes que certamente 
                     farão todos os convidados sorrir.
                 </p>
+            </div>
+
+            <div class="table-container">
+                <table class="table table-bordered table-striped mx-auto">
+                    <thead class="bg-green-200">
+                        <th class="border-l border-t border-r">Opções</th>
+                        <th class="border-l border-t border-r">Comidas</th>
+                        <th class="border-l border-t border-r">Bebidas</th>
+                    </thead>
+                    <tbody>
+                        @foreach($foods as $food)
+                            <tr>
+                                <td class="border-l border-r">{{ $food->name }}</td>
+                                <td class="border-l border-r">{!! $food->body !!}</td>
+                                <td class="border-l border-r">{!! $food->drink !!}</td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
             </div>
         </main>
 
