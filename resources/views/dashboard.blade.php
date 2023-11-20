@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -9,13 +10,18 @@
 </head>
 
 <body>
+<div class="titleFaixa">
     <h1>Área Logada</h1>
+    <div class="green-band"></div>
+    <div class="rightFaixa">
+        <a href="{{ route('parties.create') }}">Agende sua Festa!</a>
+    </div>
+</div>
 
-    <ul>
-        <li><a href="{{ route('parties.create') }}">Agende uma festa</a></li>
-    </ul>
 
     <!-- Exibe informações da festa -->
+<div class="suaFesta">
+
     <h1>Sua Festa</h1>
     @if($party)
         <ul>
@@ -92,8 +98,8 @@
     @else
         <h2>- Informações sobre sua festa irão aparecer aqui... -</h2>
     @endif
-
-    <table>
+</div>
+    <table class="recommendations">
         <thead>
             <th>Recomendações</th>
         </thead>
@@ -106,6 +112,22 @@
         </tbody>
     </table>
 
+
+    <!-- Rodapé -->
+<footer>
+    <div class="footerLeft">
+        <p>Casa do Confete</p>
+        <p>Rua das Flores, 456</p>
+        <p>Bairro do Bosque</p>
+        <p>CEP: 12345-678</p>
+        <p>Cidade Serena, Estado Tranquilo</p>
+    </div>
+
+    <div class="footerRight">
+        <p>Contate-nos: contato@casadoconfete.com.br</p>
+        <p>©Copyright 2023 - Casa do Confete, Todos os direitos reservados</p>
+    </div>
+</footer>
 </body>
 </html>
 </x-app-layout>
