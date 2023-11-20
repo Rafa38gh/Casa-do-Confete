@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <div class=loginAdmin>
+    <div class="grid grid-rows-2 grid-flow-col gap-4">
     <x-primary-button>
         <a href="{{ route('admin.parties') }}">Visualizar Festas</a>
     </x-primary-button>

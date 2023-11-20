@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <div class="titleSobre">
+    <div class="titleFaixa">
         <h1>Sobre Nós</h1>
         <div class="green-band"></div>
     </div>
