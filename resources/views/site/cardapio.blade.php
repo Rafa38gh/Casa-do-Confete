@@ -9,6 +9,12 @@
     <title>Cardápio - Casa do Confete</title>
 </head>
 <body>
+
+    <div class="titleFaixa">
+        <h1>Cardápio</h1>
+        <div class="green-band"></div>
+    </div>
+
     <main>
         <div class="text">
             <p>
