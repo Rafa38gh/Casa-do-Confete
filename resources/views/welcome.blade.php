@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -10,10 +11,15 @@
 
 <body>
     <!-- Título -->
-    <div id="title">
-        <img src="{{ URL::asset('images/header.png') }}" alt="Imagem de capa">
-    </div>
+    <figure class="titleLeft">
+        <img src="{{ URL::asset('images/festa-infantil.png') }}" alt="Imagem de capa">
+        <figcaption>
+            <h1>Casa do Confete</h1>
+            <h3>Festas Infantis</h3>
+        </figcaption>
+    </figure>
 
+    <div class="lower"></div>
     <!-- Corpo principal da página -->
     <main>
         <div class="mainTitle">
@@ -55,7 +61,7 @@
                     o que realmente se encaixa com a sua festa. Basta selecionar seus pratos favoritos e nossa equipe de chefs 
                     renomados cuidará do resto.
                 </p>
-                <p><a href="/cardapio">Confira nossos cardápios</a></p>
+                <p class="link"><a href="/cardapio">Confira nossos cardápios</a></p>
             </figcaption>
         </figure>
     </main>
@@ -65,29 +71,34 @@
         <h2>Avaliações de Clientes</h2>
     </div>
     <div class="score">
-        <h3>Ana G.</h3>
-        <p>
-            "A Casa do Confete tornou o aniversário do meu filho uma experiência inesquecível! A equipe foi incrível, a decoração estava 
-            deslumbrante, e as crianças se divertiram muito. Mal podemos esperar para a próxima festa!"
-        </p>
-
-        <h3>Luís F.</h3>
-        <p>
-            "Eu não poderia estar mais satisfeito com a Casa do Confete. Eles cuidaram de todos os detalhes da festa do meu filho, desde a 
-            seleção do tema até a comida deliciosa. Foi uma celebração sem preocupações, e as crianças adoraram."
-        </p>
-
-        <h3>Juliana M.</h3>
-        <p>
-            "A Casa do Confete fez um trabalho excepcional na festa da minha filha. A decoração era mágica, o entretenimento cativante, e a 
-            equipe muito atenciosa. Minha filha e seus amigos tiveram o melhor dia de todos!"
-        </p>
-
-        <h3>Mariana S.</h3>
-        <p>
-            "Minha filha teve o aniversário dos seus sonhos na Casa do Confete. A equipe fez um trabalho incrível, e a festa superou todas 
-            as expectativas. Estou muito grata pela dedicação e profissionalismo."
-        </p>
+        <div class="item">
+            <h3>Ana G.</h3>
+            <p>
+                "A Casa do Confete tornou o aniversário do meu filho uma experiência inesquecível! A equipe foi incrível, a decoração estava 
+                deslumbrante, e as crianças se divertiram muito. Mal podemos esperar para a próxima festa!"
+            </p>
+        </div>
+        <div class="item">
+            <h3>Luís F.</h3>
+            <p>
+                "Eu não poderia estar mais satisfeito com a Casa do Confete. Eles cuidaram de todos os detalhes da festa do meu filho, desde a 
+                seleção do tema até a comida deliciosa. Foi uma celebração sem preocupações, e as crianças adoraram."
+            </p>
+        </div>
+        <div class="item">
+            <h3>Juliana M.</h3>
+            <p>
+                "A Casa do Confete fez um trabalho excepcional na festa da minha filha. A decoração era mágica, o entretenimento cativante, e a 
+                equipe muito atenciosa. Minha filha e seus amigos tiveram o melhor dia de todos!"
+            </p>
+        </div>
+        <div class="item">
+            <h3>Mariana S.</h3>
+            <p>
+                "Minha filha teve o aniversário dos seus sonhos na Casa do Confete. A equipe fez um trabalho incrível, e a festa superou todas 
+                as expectativas. Estou muito grata pela dedicação e profissionalismo."
+            </p>
+        </div>
     </div>
 
     <!-- Rodapé -->

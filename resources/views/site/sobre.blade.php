@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -9,39 +10,48 @@
 </head>
 
 <body>
+    <div class="titleSobre">
+        <h1>Sobre Nós</h1>
+        <div class="green-band"></div>
+    </div>
+    
     <main>
         <div class="text">
             
-                <h3>Nossa Proposta:</h3>
-                    <p>
-                        Na Casa do Confete, a nossa proposta é simples: fazer com que cada festa infantil seja única e especial.
-                        Acreditamos que cada criança merece uma celebração que reflita seus interesses e personalidade.
-                        Por isso, trabalhamos de perto com você para criar festas personalizadas que deixam todos encantados.
-                    </p>
+            <h3>Nossa Proposta:</h3>
+                <p>
+                    Na Casa do Confete, a nossa proposta é simples: fazer com que cada festa infantil seja única e especial.
+                    Acreditamos que cada criança merece uma celebração que reflita seus interesses e personalidade.
+                    Por isso, trabalhamos de perto com você para criar festas personalizadas que deixam todos encantados.
+                </p>
 
-                <h3>Comprometimento com a Excelência:</h3>
-                    <p>
-                        Nosso compromisso com a excelência é inabalável.
-                        Cada membro da nossa equipe é apaixonado por criar momentos memoráveis para famílias. 
-                        Acreditamos no poder da atenção aos detalhes, na segurança das nossas instalações e na 
-                        alegria que nossas festas trazem a cada criança.
-                    </p>
+            <h3>Comprometimento com a Excelência:</h3>
+                <p>
+                    Nosso compromisso com a excelência é inabalável.
+                    Cada membro da nossa equipe é apaixonado por criar momentos memoráveis para famílias. 
+                    Acreditamos no poder da atenção aos detalhes, na segurança das nossas instalações e na 
+                    alegria que nossas festas trazem a cada criança.
+                </p>
 
-                <h3>História da Casa do Confete:</h3>
-                    <p>
-                        A Casa do Confete começou como um sonho de proporcionar experiências inesquecíveis para crianças e suas famílias. 
-                        Fundada por Marcos Araújo em 2010, nossa jornada tem sido marcada por alegria, criatividade e dedicação. 
-                        Hoje, continuamos a honrar essa visão, celebrando milhares de festas que se tornaram parte da nossa história.
-                    </p>
+            <h3>História da Casa do Confete:</h3>
+                <p>
+                    A Casa do Confete começou como um sonho de proporcionar experiências inesquecíveis para crianças e suas famílias. 
+                    Fundada por Marcos Araújo em 2010, nossa jornada tem sido marcada por alegria, criatividade e dedicação. 
+                    Hoje, continuamos a honrar essa visão, celebrando milhares de festas que se tornaram parte da nossa história.
+                </p>
                 
+            <br>
+            <h3>Conheça nossa infraestrutura: </h3>
+        </div>
 
-        <h3>Conheça nossa infraestrutura: </h3>
+        <div class="sequence">
+
             <img src="images/sobre-img1.png" alt="Infraestrutura da Casa">
             <img src="images/sobre-img2.png" alt="Parte externa">
             <img src="images/sobre-img3.png" alt="Infraestrutura da Casa">
-
-
+            
         </div>
+
     </main>
         
     <!-- Rodapé -->

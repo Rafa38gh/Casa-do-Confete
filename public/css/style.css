@@ -1,0 +1,163 @@
+/* Main */
+.mainTitle {
+    color: white;
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+    background: rgba(255, 107, 142, 0.7);
+}
+
+.titleLeft {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    text-align: center;
+    padding-left: 50px;
+    padding-right: 50px;
+    border-left: hidden;
+    border-right: hidden;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    border-top: solid;
+    border-bottom: solid;
+    border-top-width: 100px;
+    border-bottom-width: 100px;
+    border-top-color: rgba(124, 205, 124, 0.35);
+    border-bottom-color: rgba(124, 205, 124, 0.35);
+}
+
+.titleLeft img {
+    max-width: 60%;
+    height: auto;
+}
+
+.titleLeft h1, .titleLeft h3 {
+    align-items: center;
+    color: rgba(255, 107, 142, 0.7);
+    font-size: 40px;
+    font-weight: bold;
+    margin-right: 120px;
+}
+
+
+
+h3 {
+    margin: 0;
+    color: rgba(255, 107, 142, 0.7);
+    font-size: 30px;
+    font-weight: bold;
+}
+
+/* Figs Left & Right*/
+.figLeft {
+    text-align: left;
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+}
+
+.figLeft img {
+    float: left;
+    margin-right: 30px;
+}
+
+.figRight {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    text-align: left;
+    margin-left: 30px;
+}
+
+.figRight img {
+    margin-left: 30px;
+    margin-top: auto;
+}
+
+.link {
+    color: darkblue;
+    text-align: center;
+}
+
+/* Avaliações */
+
+.score {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgba(124, 205, 124, 0.35);
+}
+
+.item {
+    flex: 1;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.item h3 {
+    margin: 0 0 10px;
+}
+
+/* Footer */
+footer {
+    background-color: rgba(255, 107, 142, 0.7);
+    color: white;
+    padding: 10px 10px 125px 10px;
+    text-align: center;
+}
+
+.footerLeft {
+    margin-left: 50px;
+    float: left;
+}
+
+.footerRight {
+    margin-top: 30px;
+    margin-right: 50px;
+    float: right;
+}
+
+/* Sobre Nós*/
+.titleSobre {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.titleSobre h1 {
+    margin: 0;
+    padding: 50px;
+    z-index: 1;
+    color: rgba(255, 107, 142, 0.7);
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.green-band {
+    background-color: rgba(124, 205, 124, 0.35);
+    height: 160px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.text {
+    text-align: left;
+    align-items: center;
+    vertical-align: middle;
+    margin: 50px 100px;
+}
+
+.sequence {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px 20px 50px 20px;
+}
+
+.sequence img {
+    max-width: 30%;
+    height: auto;
+}
