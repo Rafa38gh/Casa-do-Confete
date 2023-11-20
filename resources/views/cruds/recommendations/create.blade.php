@@ -1,30 +1,44 @@
 <!-- Script para usar o CKEditor -->
 <x-app-layout>
-<script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+    <!DOCTYPE html>
+    <html lang="pt">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-<title>Nova Recomendação</title>
+        <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
 
-<!-- Verificação de erros -->
-@if ($errors->any())
-    @foreach ($errors->all() as $error)
-        <ul>
-            <li>{{ $error }}</li>
-        </ul>
-    @endforeach
-@endif
+        <title>Criar Recomendação - Casa do Confete</title>
+    </head>
 
-<form action="{{ route('recommendations.store') }}" method="POST">
-    @csrf
-    <textarea name="body" id="body" cols="100" rows="30" placeholder="Escreva as recomendações aqui">{{ old('body') }}</textarea>
+    <body>
+        <title>Nova Recomendação</title>
 
-    <button type="submit">Enviar</button>
-</form>
+        <!-- Verificação de erros -->
+        @if ($errors->any())
+            @foreach ($errors->all() as $error)
+                <ul>
+                    <li>{{ $error }}</li>
+                </ul>
+            @endforeach
+        @endif
 
-<script>
-    ClassicEditor
-        .create( document.querySelector( '#body' ) )
-        .catch( error => {
-            console.error( error );
-        } );
-</script>
+        <form action="{{ route('recommendations.store') }}" method="POST">
+            @csrf
+            <textarea name="body" id="body" cols="100" rows="30" placeholder="Escreva as recomendações aqui">{{ old('body') }}</textarea>
+
+            <button type="submit">Enviar</button>
+        </form>
+
+        <script>
+            ClassicEditor
+                .create( document.querySelector( '#body' ) )
+                .catch( error => {
+                    console.error( error );
+                } );
+        </script>
+    </body>
+    </html>
+
 </x-app-layout>
