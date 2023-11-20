@@ -46,10 +46,17 @@ h1 {
     font-weight: bold;
 }
 
-h3 {
+h2 {
     margin: 0;
     color: rgba(255, 107, 142, 0.7);
     font-size: 30px;
+    font-weight: bold;
+}
+
+h3 {
+    margin: 0;
+    color: rgba(255, 107, 142, 0.7);
+    font-size: 20px;
     font-weight: bold;
 }
 
@@ -193,6 +200,27 @@ footer {
     font-weight: bold;
 }
 
+.suaFesta a {
+    color: blue;
+}
+
+.suaFesta table {
+    margin: 20px auto;
+    border: 5px hidden;
+    width: 70%;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.suaFesta th {
+    font-size: 20px;
+    font-weight: bold;
+    color: rgba(255, 107, 142, 0.7);
+}
+.suaFesta tbody {
+    border: 5px hidden;
+}
+
 .suaFesta button {
     padding: 4px;
     background-color: rgba(255, 107, 142, 0.7);
@@ -214,4 +242,52 @@ footer {
 }
 .recommendations tbody {
     border: 5px hidden;
+}
+
+table {
+    margin: 20px auto;
+    border: 5px hidden;
+    width: 70%;
+    text-align: center;
+    vertical-align: middle;
+}
+
+th {
+    font-size: 20px;
+    font-weight: bold;
+}
+tbody {
+    border: 5px hidden;
+}
+
+.botao {
+    text-align: center;
+    padding: 4px;
+    background-color: rgba(255, 107, 142, 0.7);
+    color: white;
+    border-radius: 10px;
+}
+
+.formInvite {
+    margin: 20px auto;
+    text-align: center;
+}
+
+.formInvite input {
+    border: 1px solid;
+    margin: 4px;
+}
+
+.researchCreate {
+    margin: 20px auto;
+    text-align: center;
+}
+
+.botaoCenter {
+    display: flex;
+    margin: 10px auto;
+    padding: 4px;
+    background-color: rgba(255, 107, 142, 0.7);
+    color: white;
+    border-radius: 10px;
 }

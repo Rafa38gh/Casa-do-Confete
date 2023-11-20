@@ -2,6 +2,7 @@
     <!DOCTYPE html>
     <html lang="pt">
     <head>
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -17,20 +18,21 @@
                 </ul>
             @endforeach
         @endif
+        <div class="formInvite">
+            <h1>Formulário de Convite</h1>
 
-        <h1>Formulário de Convite</h1>
-
-        <form action="{{ route('invite.store', ['id' => $party->id]) }}" method="POST">
-        @csrf
-        <div id="guests">
-            <input type="text" placeholder="Nome do Convidado" name="guests[0][name]" size="30" value="{{ old('guests[0][name]') }}" required>
-            <input type="text" placeholder="CPF" name="guests[0][cpf]" value="{{ old('guests[0][cpf]') }}" required>
-            <input type="number" placeholder="Idade" name="guests[0][age]" value="{{ old('guests[0][age]') }}" required>
+            <form action="{{ route('invite.store', ['id' => $party->id]) }}" method="POST">
+            @csrf
+            <div id="guests">
+                <input type="text" placeholder="Nome do Convidado" name="guests[0][name]" size="30" value="{{ old('guests[0][name]') }}" required>
+                <input type="text" placeholder="CPF" name="guests[0][cpf]" value="{{ old('guests[0][cpf]') }}" required>
+                <input type="number" placeholder="Idade" name="guests[0][age]" value="{{ old('guests[0][age]') }}" required>
+            </div>
+            <br>
+            <button class="botao" type="button" onclick="newField()">Adicionar Convidado</button>
+            <button class="botao" type="submit">Enviar</button>
+            </form>
         </div>
-
-        <button type="button" onclick="newField()">Adicionar Convidado</button>
-        <button type="submit">Enviar</button>
-        </form>
 
         <script>
         var inviteCount = 1;
