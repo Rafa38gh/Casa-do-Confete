@@ -5,10 +5,16 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
         <title>Cardápios - Casa do Confete</title>
     </head>
 
     <body>
+        <div class="titleFaixa">
+            <h1>Cardápios</h1>
+            <div class="green-band"></div>
+        </div>
+        <div class="suaFesta">
         <table>
             <thead>
                 <th>Nome do Cardápio</th>
@@ -26,7 +32,7 @@
 
                         <td>
                             <form action="{{ route('foods.edit', $food->id) }}">
-                                <button type="submit">Editar</button>
+                                <button type="submit" class="botao">Editar</button>
                             </form>
                         </td>
 
@@ -34,16 +40,22 @@
                             <form action="{{ route('foods.destroy', $food->id) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit">Deletar</button>
+                                <button type="submit" class="botao">Deletar</button>
                             </form>
                         </td>
                     </tr>
                 @endforeach 
             </tbody>
+        
+
         </table>
-        <x-primary-button>
-            <a href="{{ route('foods.create') }}">Novo cardápio</a>
-        </x-primary-button>
+        </div>
+            <form action="{{ route('foods.create') }}">
+                <button type="submit" class="botaoCenter">Novo Cardápio</button>
+            </form>
+
+
+
     </body>
     </html>
 </x-app-layout>

@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=], initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
         <!-- Script para usar o CKEditor -->
         <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
 
@@ -13,7 +13,10 @@
     </head>
 
     <body>
-        <h1>Editar Cardápio</h1>
+        <div class="titleFaixa">
+            <h1>Editar Cardápio</h1>
+            <div class="green-band"></div>
+        </div>
 
         <!-- Verificação de erros -->
         @if ($errors->any())
@@ -33,7 +36,7 @@
             <textarea name="drink" id="drink" cols="50" rows="20" placeholder="Bebidas"><img src="{{ URL::asset('images/foods/juice.webp') }}" alt="Sucos" width="150" height="100"></textarea>
             <input type="number" placeholder="Preço por pessoa" name="price" value="{{ old('price') }}">
 
-            <button type="submit">Atualizar</button>
+            <button type="submit" class="botao">Atualizar</button>
         </form>
 
         <script>

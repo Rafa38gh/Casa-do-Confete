@@ -256,22 +256,6 @@ table {
     margin: 20px auto;
     border: 5px hidden;
     width: 70%;
-    text-align: center;
-}
-
-
-.adminLogin {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    margin: 0;
-  }
-  
-.quadrado {
-    width: 100px;
-    height: 100px;
-    background-color: #3498db;
 }
 
 .suaFesta {
