@@ -250,20 +250,6 @@ table {
     width: 70%;
 }
 
-.adminLogin {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    margin: 0;
-  }
-  
-.quadrado {
-    width: 100px;
-    height: 100px;
-    background-color: #3498db;
-}
-
 .suaFesta {
     text-align: center;
     vertical-align: middle;
@@ -308,3 +294,6 @@ tbody {
     color: white;
     border-radius: 10px;
 }
+
+
+
