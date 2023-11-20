@@ -2,14 +2,20 @@
     <!DOCTYPE html>
     <html lang="pt">
     <head>
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Festas - Casa do Confete</title>
     </head>
+    
     <body>
-        <h1>Visualização das Festas</h1>
+        <div class="titleFaixa">
+            <h1>Visualização das Festas</h1>
+            <div class="green-band"></div>
+        </div>
 
+        <div class="suaFesta">
         <table>
             <thead>
                 <th>Nome</th>
@@ -49,13 +55,14 @@
                             <form action="{{ route('parties.destroy', $party->id) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit">Deletar</button>
+                                <button type="submit">Deletar Festa</button>
                             </form>
                         </td>
                     </tr>
                 @endforeach 
             </tbody>
         </table>
+        </div>
     </body>
     </html>
 </x-app-layout>

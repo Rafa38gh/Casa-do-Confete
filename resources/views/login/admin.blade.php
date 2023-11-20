@@ -15,7 +15,7 @@
         <div class="green-band"></div>
     </div>
 
-    <div class="flex-col min-h-screen items-center justify-center grid grid-flow-row auto-rows-max mt-5">
+    <div class="flex-col items-center justify-center grid grid-flow-row auto-rows-max mt-5">
 
     <x-primary-button>
         <a href="{{ route('admin.parties') }}">Visualizar Festas</a>
@@ -38,7 +38,7 @@
     </x-primary-button>
     </div>
 
-    <footer class="mt-auto">
+    <footer class="fixed bottom-0 left-0 right-0">
             <div class="footerLeft">
                 <p>Casa do Confete</p>
                 <p>Rua das Flores, 456</p>
