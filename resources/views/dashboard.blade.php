@@ -87,6 +87,9 @@
                     </tr>
                 </tbody>
             </table>
+
+            <!-- Pesquisa de satisfação -->
+            <p>Conte-nos sobre suas experiências no buffet, responda nossa: <a href="{{ route('research.create') }}">Pesquisa de Satisfação</a></p>
         @endif
         
     @else

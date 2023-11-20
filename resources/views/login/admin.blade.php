@@ -24,6 +24,10 @@
     <x-primary-button>
             <a href="{{ route('booking.show') }}">Visualizar Agenda</a>
     </x-primary-button>
+        <br>
+    <x-primary-button>
+        <a href="{{ route('research.index') }}">Pesquisas de Satisfação</a>
+    </x-primary-button>
 
 </body>
 </html>
