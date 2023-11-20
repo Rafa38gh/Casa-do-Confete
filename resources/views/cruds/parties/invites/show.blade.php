@@ -18,9 +18,12 @@
                 </ul>
             @endforeach
         @endif
-
+        <div class="titleFaixa">
+            <h1>Informações da Festa</h1>
+            <div class="green-band"></div>
+        </div>
         <div class="showConvidados">
-        <h1>Informações da Festa</h1>
+        
 
         <!-- Informações Gerais -->
         <ul>

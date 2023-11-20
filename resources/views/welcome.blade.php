@@ -68,7 +68,7 @@
 
     <!-- Avaliações dos clientes -->
     <div class="mainTitle">
-        <h2>Avaliações de Clientes</h2>
+        <p>Avaliações de Clientes<p>
     </div>
     <div class="score">
         <div class="item">
@@ -102,7 +102,7 @@
     </div>
 
     <!-- Rodapé -->
-    <footer>
+    <footer class="footerWelcome">
         <div class="footerLeft">
             <p>Casa do Confete</p>
             <p>Rua das Flores, 456</p>

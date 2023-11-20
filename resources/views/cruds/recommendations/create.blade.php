@@ -3,6 +3,7 @@
     <!DOCTYPE html>
     <html lang="pt">
     <head>
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -13,7 +14,10 @@
     </head>
 
     <body>
-        <title>Nova Recomendação</title>
+        <div class="titleFaixa">
+            <h1>Nova Recomendação</h1>
+            <div class="green-band"></div>
+        </div>
 
         <!-- Verificação de erros -->
         @if ($errors->any())
@@ -28,7 +32,7 @@
             @csrf
             <textarea name="body" id="body" cols="100" rows="30" placeholder="Escreva as recomendações aqui">{{ old('body') }}</textarea>
 
-            <button type="submit">Enviar</button>
+            <button class="botaoCenter" type="submit">Enviar</button>
         </form>
 
         <script>

@@ -18,8 +18,11 @@
                 </ul>
             @endforeach
         @endif
-        <div class="formInvite">
+        <div class="titleFaixa">
             <h1>Formulário de Convite</h1>
+            <div class="green-band"></div>
+        </div>
+        <div class="formInvite">
 
             <form action="{{ route('invite.store', ['id' => $party->id]) }}" method="POST">
             @csrf

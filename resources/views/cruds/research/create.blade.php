@@ -21,6 +21,10 @@
                 </ul>
             @endforeach
         @endif
+        <div class="titleFaixa">
+            <h1>Pesquisa de Satisfação</h1>
+            <div class="green-band"></div>
+        </div>
 
         <form action="{{ route('research.store') }}" method="POST">
             @csrf
