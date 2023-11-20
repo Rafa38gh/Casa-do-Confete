@@ -25,8 +25,17 @@
             @endforeach
         </div>
 
-        <div class="mt-4">
-            <input type="datetime-local" name="date" value="{{ old('date') }}">
+        <div>
+            <select name="date" id="date-select">
+                <option value="">-- Escolha uma data --</option>
+
+                <!-- Exibe todas as datas disponíveis -->
+                @foreach($bookings as $booking)
+                    @if($booking->status == 'livre')
+                        <option value="{{ $booking->date }}">{{ $booking->date }}</option>
+                    @endif
+                @endforeach
+            </select>
         </div>
 
         <button type="submit" class="bg-pink-400 hover:bg-pink-500 text-white font-bold py-2 px-4 rounded mt-4">Agendar Festa</button>
