@@ -2,10 +2,11 @@
     <!DOCTYPE html>
     <html lang="pt">
     <head>
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Document</title>
+        <title>Show - Convidados</title>
     </head>
 
     <body>
@@ -18,6 +19,7 @@
             @endforeach
         @endif
 
+        <div class="showConvidados">
         <h1>Informações da Festa</h1>
 
         <!-- Informações Gerais -->
@@ -46,7 +48,7 @@
                                 <form action="{{ route('invite.destroy', $party->id) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn" name="invite_id" value="{{ $invite->id }}">Confirmar Presença</button>
+                                    <button type="submit" class="botao" name="invite_id" value="{{ $invite->id }}">Confirmar Presença</button>
                                 </form>
                             </td>
                         </tr>
@@ -55,7 +57,7 @@
             </tbody>
         </table>
 
-        <a href="{{ route('ops.create', $party->id) }}">Adicionar Convidado</a>
+        <a class="botaoShow" href="{{ route('ops.create', $party->id) }}">Adicionar Convidado</a>
 
         <!-- Dados do Cardápio -->
         <table>
@@ -74,7 +76,7 @@
                 </tr>
             </tbody>
         </table>
-
+        </div>
     </body>
     </html>
 </x-app-layout>

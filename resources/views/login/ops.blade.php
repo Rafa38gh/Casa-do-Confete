@@ -2,6 +2,7 @@
     <!DOCTYPE html>
     <html lang="pt">
     <head>
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +10,10 @@
     </head>
 
     <body>
-    <h1>Área Operacional</h1>
+    <div class="titleFaixa">
+        <h1>Área Logada - Operacional</h1>
+        <div class="green-band"></div>
+    </div>
 
     <!-- Exibição de festas -->
     <table>
@@ -30,14 +34,29 @@
                         <td>{{ $party->food }}</td>
                         <td>{{ $party->date }}</td>
 
-                        <td><a href="{{ route('ops.show', $party->id) }}">Informações</a></td>
+                        <td><a class="botao" href="{{ route('ops.show', $party->id) }}">Informações</a></td>
                     </tr>
                 @endif
             @endforeach
         </tbody>
     </table>
-    
-    </body>
 
+
+        <!-- Rodapé -->
+        <footer class="moreSpace">
+        <div class="footerLeft">
+            <p>Casa do Confete</p>
+            <p>Rua das Flores, 456</p>
+            <p>Bairro do Bosque</p>
+            <p>CEP: 12345-678</p>
+            <p>Cidade Serena, Estado Tranquilo</p>
+        </div>
+
+        <div class="footerRight">
+            <p>Contate-nos: contato@casadoconfete.com.br</p>
+            <p>©Copyright 2023 - Casa do Confete, Todos os direitos reservados</p>
+        </div>
+    </footer>
+    </body>
     </html>
 </x-app-layout>

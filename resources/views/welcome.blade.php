@@ -23,7 +23,7 @@
     <!-- Corpo principal da página -->
     <main>
         <div class="mainTitle">
-            <h2>A maior festa infantil do mundo!!</h2>
+            <p>A maior festa infantil do mundo!!</p>
             <p>Uma experiência mágica</p>
         </div>
 
