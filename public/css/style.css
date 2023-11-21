@@ -1,0 +1,338 @@
+/* Main */
+.mainTitle {
+    color: white;
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+    background: rgba(255, 107, 142, 0.7);
+}
+
+.titleLeft {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    text-align: center;
+    padding-left: 50px;
+    padding-right: 50px;
+    border-left: hidden;
+    border-right: hidden;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    border-top: solid;
+    border-bottom: solid;
+    border-top-width: 150px;
+    border-bottom-width: 150px;
+    border-top-color: rgba(124, 205, 124, 0.35);
+    border-bottom-color: rgba(124, 205, 124, 0.35);
+}
+
+.titleLeft img {
+    max-width: 60%;
+    height: auto;
+}
+
+.titleLeft h1, .titleLeft h3 {
+    align-items: center;
+    color: rgba(255, 107, 142, 0.7);
+    font-size: 40px;
+    font-weight: bold;
+    margin-right: 120px;
+}
+
+h1 {
+    margin: 0;
+    color: rgba(255, 107, 142, 0.7);
+    font-size: 40px;
+    font-weight: bold;
+}
+
+h2 {
+    margin: 0;
+    color: rgba(255, 107, 142, 0.7);
+    font-size: 30px;
+    font-weight: bold;
+}
+
+h3 {
+    margin: 0;
+    color: rgba(255, 107, 142, 0.7);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Figs Left & Right*/
+.figLeft {
+    text-align: left;
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+}
+
+.figLeft img {
+    float: left;
+    margin-right: 30px;
+}
+
+.figRight {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    text-align: left;
+    margin-left: 30px;
+}
+
+.figRight img {
+    margin-left: 30px;
+    margin-top: auto;
+}
+
+.link {
+    color: darkblue;
+    text-align: center;
+}
+
+/* Avaliações */
+
+.score {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgba(124, 205, 124, 0.35);
+}
+
+.item {
+    flex: 1;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.item h3 {
+    margin: 0 0 10px;
+}
+
+/* Footer */
+.footerWelcome {
+    background-color: rgba(255, 107, 142, 0.7);
+    color: white;
+    padding: 10px 10px 125px 10px;
+    text-align: center;
+    margin: 0px;
+}
+
+footer {
+    background-color: rgba(255, 107, 142, 0.7);
+    color: white;
+    margin-top: 200px;
+    padding: 10px 10px 125px 10px;
+    text-align: center;
+}
+
+.footerLeft {
+    margin-left: 50px;
+    float: left;
+}
+
+.footerRight {
+    margin-top: 30px;
+    margin-right: 50px;
+    float: right;
+}
+
+/* Sobre Nós*/
+.titleFaixa {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.titleFaixa h1 {
+    margin: 0;
+    padding: 50px;
+    z-index: 1;
+    color: rgba(255, 107, 142, 0.7);
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.rightFaixa {
+    flex-direction: row-reverse;
+    margin: 0;
+    margin: 50px;
+    padding: 10px;
+    z-index: 1;
+    color: white;
+    background-color: rgba(255, 107, 142, 0.7);
+    font-size: 30px;
+    font-weight: bold;
+    margin-left: auto;
+    border-radius: 20px;
+}
+
+.green-band {
+    background-color: rgba(124, 205, 124, 0.35);
+    height: 160px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.text {
+    text-align: left;
+    align-items: center;
+    vertical-align: middle;
+    margin: 50px 100px;
+}
+
+.sequence {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0px 20px 50px 20px;
+}
+
+.sequence img {
+    max-width: 30%;
+    height: auto;
+}
+
+.suaFesta {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.suaFesta h2 {
+    margin: 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.suaFesta a {
+    color: blue;
+}
+
+.suaFesta table {
+    margin: 20px auto;
+    border: 5px hidden;
+    width: 70%;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.suaFesta th {
+    font-size: 20px;
+    font-weight: bold;
+    color: rgba(255, 107, 142, 0.7);
+}
+.suaFesta tbody {
+    border: 5px hidden;
+}
+
+.suaFesta button {
+    padding: 4px;
+    background-color: rgba(255, 107, 142, 0.7);
+    color: white;
+    border-radius: 10px;
+}
+.recommendations {
+    margin-top: 100px;
+    border: 5px hidden;
+    width: 100%;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.recommendations th {
+    font-size: 20px;
+    font-weight: bold;
+    color: rgba(255, 107, 142, 0.7);
+}
+.recommendations tbody {
+    border: 5px hidden;
+}
+
+table {
+    margin: 20px auto;
+    border: 5px hidden;
+    width: 70%;
+}
+
+.suaFesta {
+    text-align: center;
+    vertical-align: middle;
+}
+
+th {
+    font-size: 20px;
+    font-weight: bold;
+}
+tbody {
+    border: 5px hidden;
+}
+
+.botao {
+    text-align: center;
+    padding: 4px;
+    background-color: rgba(255, 107, 142, 0.7);
+    color: white;
+    border-radius: 10px;
+}
+
+.formInvite {
+    margin: 20px auto;
+    text-align: center;
+}
+
+.formInvite input {
+    border: 1px solid;
+    margin: 4px;
+}
+
+.researchCreate {
+    margin: 20px auto;
+    text-align: center;
+}
+
+.botaoCenter {
+    display: flex;
+    margin: 10px auto;
+    padding: 4px;
+    background-color: rgba(255, 107, 142, 0.7);
+    color: white;
+    border-radius: 10px;
+}
+
+.moreSpace {
+    background-color: rgba(255, 107, 142, 0.7);
+    color: white;
+    margin-top: 300px;
+    padding: 10px 10px 125px 10px;
+    text-align: center;
+}
+
+.showConvidados {
+    text-align: center;
+    margin: 20px auto;
+}
+
+.botaoShow {
+    text-align: center;
+    margin: 10px auto;
+    padding: 4px;
+    background-color: rgba(255, 107, 142, 0.7);
+    color: white;
+    border-radius: 10px;
+}
+
+.botaoIndex {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: rgba(255, 107, 142, 0.7);
+    color: white;
+    margin: 20px auto;
+    border-radius: 10px;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+}
