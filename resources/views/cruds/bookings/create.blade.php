@@ -23,7 +23,7 @@
                 <input type="datetime-local" id="date" name="date" value="{{ old('date') }}">
             </div>
 
-            <button type="submit" class="bg-pink-400 hover:bg-pink-500 text-white font-bold py-2 px-4 rounded mt-4">Adicionar Data</button>
+            <button type="submit" class="botaoCenter">Adicionar Data</button>
         </form>
     </body>
     </html>

@@ -1,6 +1,6 @@
 <x-app-layout>
     <!DOCTYPE html>
-    <html lang="en">
+    <html lang="pt">
     <head>
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
         <meta charset="UTF-8">
@@ -10,27 +10,29 @@
     </head>
 
     <body>
-    <div class="titleFaixa">
+        <div class="titleFaixa">
             <h1>Pesquisas de Satisfação</h1>
             <div class="green-band"></div>
         </div>
 
-        <table>
-            <thead>
-                <th>Questão 1</th>
-                <th>Questão 2</th>
-                <th>Questão 3</th>
-            </thead>
-            <tbody>
-                @foreach($researches as $research)
-                <tr>
-                    <td>{{ $research->answer1 }}</td>
-                    <td>{{ $research->answer2 }}</td>
-                    <td>{!! $research->answer3 !!}</td>
-                </tr>
-                @endforeach
-            </tbody>
-        </table>
+        <div class="suaFesta">
+            <table>
+                <thead>
+                    <th>Questão 1</th>
+                    <th>Questão 2</th>
+                    <th>Questão 3</th>
+                </thead>
+                <tbody>
+                    @foreach($researches as $research)
+                    <tr>
+                        <td>{{ $research->answer1 }}</td>
+                        <td>{{ $research->answer2 }}</td>
+                        <td>{!! $research->answer3 !!}</td>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
     </body>
     </html>
 
