@@ -1,67 +1,93 @@
+# Casa do Confete - Website
 
-# Setup do Projeto
+Olá, seja bem-vindo ao repositório do website Casa do Confete.
+Aqui iremos explicar o passo-a-passo para o setup do projeto.
 
-### Passo a passo
-Clone Repositório
+# Requerimentos
+
+1. Docker: https://www.docker.com/
+2. Node.js: https://nodejs.org/en
+3. MySQL Workbench: https://www.mysql.com/products/workbench/
+4. Visual Studio Code: https://code.visualstudio.com/
+
+# Tutorial
+1. Abra o aplicativo do Docker e o MySQL Workbench
+
+2. Abra o prompt de comando do seu computador.
+
+3. Navegue para o diretório desejado
 ```sh
-git clone -b develop https://github.com/Rafa38gh/Casa-do-Confete.git
+cd {caminho-do-diretoria}
 ```
+
+4. Clone os repositório
+```sh
+git clone https://github.com/Rafa38gh/Casa-do-Confete.git
+```
+
+5. Após clonar o repositório, navegue para os arquivos do projeto
 ```sh
 cd Casa-do-Confete
 ```
 
+6. Abra o projeto no VS Code
+```sh
+code .
+```
 
-Crie o Arquivo .env
+7. Abra o terminal do VS Code: Ctrl + J
+
+8. No terminal, crie o arquivo .env
 ```sh
 cp .env.example .env
 ```
 
-
-Atualize as variáveis de ambiente do arquivo .env
-```dosini
-APP_NAME=EspecializaTi
-APP_URL=http://localhost:8989
-
-DB_CONNECTION=mysql
-DB_HOST=db
-DB_PORT=3306
-DB_DATABASE=nome_que_desejar_db
-DB_USERNAME=nome_usuario
-DB_PASSWORD=senha_aqui
-
-CACHE_DRIVER=redis
-QUEUE_CONNECTION=redis
-SESSION_DRIVER=redis
-
-REDIS_HOST=redis
-REDIS_PASSWORD=null
-REDIS_PORT=6379
-```
-
-
-Suba os containers do projeto
+9. Suba os containeres do projeto
 ```sh
 docker-compose up -d
 ```
 
+10. Enquanto sobe os containeres, inicie um novo terminal: Ctrl+Shift+'
 
-Acesse o container app
+11. No novo terminal, instale o npm
+```sh
+npm install
+```
+
+12. Após instalado o npm, rode o comando
+```sh
+npm run dev
+```
+
+13. Volte para o terminal onde subiu os containeres do Docker
+
+14. Acesse o bash do container
 ```sh
 docker-compose exec app bash
 ```
 
-
-Instale as dependências do projeto
+15. Instale o composer
 ```sh
 composer install
 ```
 
-
-Gere a key do projeto Laravel
+16. Após instalado o composer, gere a key do projeto
 ```sh
 php artisan key:generate
 ```
 
+17. Suba as migrations
+```sh
+php artisan migrate
+```
 
-Acesse o projeto
-[http://localhost:8989](http://localhost:8989)
+18. Rode os seeders
+```sh
+php artisan db:seed
+```
+
+19. Acesse o site: http://localhost:8989
+
+20. Aproveite :)
+
+
